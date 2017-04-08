@@ -173,7 +173,6 @@
     },
     mounted() {
       var self = this
-
     }
   }
 

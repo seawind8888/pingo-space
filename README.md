@@ -1,4 +1,4 @@
-# pingo-space
+# pingo-club
 
 > A Vue.js project
 

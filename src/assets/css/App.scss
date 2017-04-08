@@ -155,10 +155,6 @@ header {
   }
 }
 
-.choose-back {
-  background: #f4f4f5
-}
-
 .subject-item-container {
   padding: 0 15px;
   .item-container {
@@ -218,11 +214,16 @@ header {
     }
   }
 }
-.channel-tab-container{
+
+.choose-back {
+  background: #f4f4f5
+}
+
+.channel-tab-container {
   width: 100%;
   display: flex;
   flex-direction: row;
-  .tab-item{
+  .tab-item {
     flex: 1;
     height: 30px;
     line-height: 30px;
@@ -230,7 +231,7 @@ header {
     text-align: center;
     border-bottom: 1px solid #eaeaec
   }
-  .item-on{
+  .item-on {
     border-bottom: 1px solid #2F3044
   }
 }
