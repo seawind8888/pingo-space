@@ -12,6 +12,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "fastclick": "^1.0.6",
     "node-sass": "^4.5.0",
     "phantomjs-prebuilt": "^2.1.14",
     "sass-loader": "^6.0.3",
