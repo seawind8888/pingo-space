@@ -134,6 +134,6 @@
 </script>
 
 <style lang="scss">
-  @import '../assets/css/App.scss';
+  @import '../assets/css/clubIndex.scss';
 
 </style>
