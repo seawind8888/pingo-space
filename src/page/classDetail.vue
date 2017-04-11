@@ -30,8 +30,72 @@
       </div>
     </section>
     <section class="class-list-container">
-      <ul>
-        <li></li>
+      <div class="section-title-container">
+        <div class="title-container">
+          <i class="title-icon"></i> 已选课程
+        </div>
+      </div>
+      <ul class="list-item-container">
+        <li class="class-list-item">
+          <div class="list-left">
+            <img class="list-icon" src="../assets/imgs/classDetails/class-list-icon-1.png" />
+          </div>
+          <div class="list-right">
+            <div class="right-title">外教</div>
+            <div class="right-info first-list">
+              <img class="user-icon" src="../assets/imgs/App/img_test.png" />
+              <span>Sophie(英国)</span>
+            </div>
+          </div>
+        </li>
+        <li class="class-list-item">
+          <div class="list-left">
+            <img class="list-icon" src="../assets/imgs/classDetails/class-list-icon-2.png" />
+          </div>
+          <div class="list-right">
+            <div class="right-title">课程时间</div>
+            <div class="right-info">
+              <span>12月25日14:00-16:00</span>
+              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="class-list-item">
+          <div class="list-left">
+            <img class="list-icon" src="../assets/imgs/classDetails/class-list-icon-3.png" />
+          </div>
+          <div class="list-right">
+            <div class="right-title">课程地点</div>
+            <div class="right-info">
+              <span>东升科技园</span>
+              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="class-list-item">
+          <div class="list-left">
+            <img class="list-icon" src="../assets/imgs/classDetails/class-list-icon-4.png" />
+          </div>
+          <div class="list-right">
+            <div class="right-title">服务区域</div>
+            <div class="right-info">
+              <span>朝阳区</span>
+              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="class-list-item">
+          <div class="list-left">
+            <img class="list-icon" src="../assets/imgs/classDetails/class-list-icon-5.png" />
+          </div>
+          <div class="list-right">
+            <div class="right-title">服务方式</div>
+            <div class="right-info">
+              <span>朝阳区</span>
+              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
   </div>
