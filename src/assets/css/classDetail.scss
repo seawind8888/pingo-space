@@ -49,6 +49,16 @@
     background: #2F3044;
     margin-right: 12px;
   }
+  .title-container-right {
+    font-size: 1.2rem;
+    width: 84px;
+    color: #999999;
+    img {
+      width: 6px;
+      height: 10px;
+      margin-left: 14px;
+    }
+  }
 }
 
 .class-content-container {
@@ -98,6 +108,10 @@
   }
   .list-icon {
     width: 12px;
+    height: 12px;
+    margin-top: 3px;
+  }
+  .lone-icon {
     height: 14px;
   }
   .right-info {
@@ -122,5 +136,116 @@
   }
   .first-list {
     height: 30px;
+  }
+}
+.club-list-container {
+  padding: 0 15px;
+  .item-container {
+    margin-left: 110px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+    padding-right: 40px;
+    &:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+  .item-left {
+    width: 110px;
+    margin-left: -110px;
+    float: left;
+    margin-top: 3px;
+    img {
+      width: 100%;
+    }
+  }
+  .item-middle {
+    float: left;
+    width: 100%;
+    margin-left: 15px;
+    .item-title-container {
+      width: 100%;
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+      text-align: left
+    }
+    .item-info-container {
+      text-align: left;
+      line-height: 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .item-right {
+    width: 40px;
+    float: left;
+    margin-right: -100%;
+    margin-top: 25px;
+    .right-info-one {
+      margin-bottom: 6px;
+    }
+    .portrait-container {
+      margin-top: 10px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: flex-end
+    }
+    img {
+      width: 6px;
+      height: 10px
+    }
+  }
+}
+.evaluate-list-container {
+  margin: 15px 15px 15px 30px;
+  .evaluate-list-item {
+    display: flex;
+    margin-top: 20px;
+    &:nth-of-type(1){
+      margin: 0;
+      }
+  }
+  .list-left {
+    width: 30px;
+    margin-right: 14px;
+    img {
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+    }
+  }
+  .list-right {
+    flex: 1;
+    text-align: left;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f4;
+    color: #999999
+  }
+  .list-user-name {
+    font-size: 1.4rem;
+    &::after {
+      content:'';
+      clear: both;
+      display: block;
+    }
+  }
+  .list-reply-time {
+    font-size: 1rem
+  }
+  .reply-info {
+    margin-top: 10px;
+    font-size: 1.2rem
+  }
+  .reply-icon-container {
+    width: 60px;
+    float: right;
+    .reply-icon {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+    }
   }
 }
