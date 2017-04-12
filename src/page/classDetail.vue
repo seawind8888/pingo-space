@@ -162,7 +162,7 @@
             <div class="reply-info">此处是评价文字文字评价评价评价</div>
           </div>
         </li>
-                <li class="evaluate-list-item">
+        <li class="evaluate-list-item">
           <div class="list-left">
             <img src="../assets/imgs/App/img_test.png">
           </div>
@@ -183,7 +183,18 @@
         </li>
       </ul>
     </section>
-    <footer></footer>
+    <footer class="detail-footer-button">
+      <a class="icon-btn-one">
+        <img  src="../assets/imgs/classDetails/button-icon-1.png">
+      </a>
+      <a class="icon-btn-two">
+        <img  src="../assets/imgs/classDetails/button-icon-2.png">
+      </a>
+      <a class="footer-main-btn">
+      <span class="btn-title">立即预定</span>
+      <span class="btn-info">已报名9人，还剩1人</span>
+      </a>
+    </footer>
   </div>
 </template>
 <script>
