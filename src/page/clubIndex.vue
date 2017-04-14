@@ -2,7 +2,7 @@
   <div class="container">
     <header>
       <img class="header-back" src="../assets/imgs/App/iStock_000045462236_Full@2x.png">
-      <div class="header-container">
+      <div class="index-header-container">
         <div class="header-title-container">
           <img src="../assets/imgs/App/index-header-icon.png">
           <span>欧美小学课外活动俱乐部</span>
@@ -73,14 +73,16 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 已选课程
           </div>
-          <div class="title-container-right">
+          <div class="title-container-right-index">
             全部
             <img src="../assets/imgs/App/check-icon.png">
           </div>
         </div>
-        <div>
-          <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'"
-            :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+        <div class="have-choose-class">
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'"
+              :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
         </div>
       </section>
       <section class="have-choose-subject">
@@ -88,20 +90,60 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 可选课程
           </div>
-          <div class="title-container-right">
+          <div class="title-container-right-index">
             全部
             <img src="../assets/imgs/App/check-icon.png">
           </div>
         </div>
         <div class="channel-tab-container">
-          <div class="tab-item item-on">全部</div>
-          <div class="tab-item">4-5岁</div>
-          <div class="tab-item">6-8岁</div>
-          <div class="tab-item">9-12岁</div>
+          <div @click="selectStage('all')" :class="ageStage=='all'?'item-on':''" class="tab-item">全部</div>
+          <div @click="selectStage('small')" :class="ageStage=='small'?'item-on':''" class="tab-item">4-5岁</div>
+          <div @click="selectStage('middle')" :class="ageStage=='middle'?'item-on':''" class="tab-item">6-8岁</div>
+          <div @click="selectStage('high')" :class="ageStage=='high'?'item-on':''" class="tab-item">9-12岁</div>
         </div>
-        <div>
-          <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'"
-            :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+        <div v-show="ageStage=='all'">
+          <div class="class-time-container">
+            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+          </div>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+          <div class="class-time-container">
+            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+          </div>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+        </div>
+        <div v-show="ageStage=='small'">
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+          <router-link :to="{path: 'detail'}" class="class-list-container">
+            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+          </router-link>
+        </div>
+        <div v-show="ageStage=='middle'">
+
+        </div>
+        <div v-show="ageStage=='high'">
+
         </div>
       </section>
     </div>
@@ -113,14 +155,7 @@
   export default {
     data() {
       return {
-        obj: [{
-          name: 'aaa',
-          sex: 'bbb'
-        }, {
-          name: 'aaa',
-          sex: 'bbb'
-        }],
-        combie: []
+        ageStage: 'all'
       }
     },
     mounted() {
@@ -128,6 +163,11 @@
     },
     components: {
       classItem
+    },
+    methods: {
+      selectStage(stage) {
+        this.ageStage = stage
+      }
     }
   }
 

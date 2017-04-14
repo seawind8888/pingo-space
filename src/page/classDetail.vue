@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="detail-container">
     <header>
       <img src="../assets/imgs/classDetails/banner.png" />
-      <div class="header-container">
+      <div class="detail-header-container">
         <h1 class="class-title">111</h1>
         <p class="class-price">￥200/次</p>
         <p class="class-info">1对3，可3人均摊费用，每人约122元</p>
@@ -132,7 +132,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="last-section">
       <div class="section-title-container">
         <div class="title-container">
           <i class="title-icon"></i> 评论
