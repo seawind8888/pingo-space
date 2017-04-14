@@ -86,7 +86,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
   font-size: 62.5%;
 }
 
@@ -101,4 +101,109 @@ body {
 
 img {
   width: 100%;
+}
+
+.section-title-container {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  .title-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .title-icon {
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: #2F3044;
+    margin-right: 12px;
+  }
+  .title-container-right {
+    font-size: 1.2rem;
+    width: 84px;
+    color: #999999;
+    img {
+      width: 6px;
+      height: 10px;
+      margin-left: 14px;
+    }
+  }
+}
+
+.class-list-container {
+  padding-top: 20px;
+  .list-item-container {
+    margin: 15px 30px;
+  }
+  .class-list-item {
+    display: flex;
+    margin-top: 30px;
+    &:nth-of-type(1){
+      margin: 0;
+    }
+  }
+  .list-left {
+    margin-right: 14px;
+  }
+  .list-right {
+    flex: 1;
+    text-align: left;
+    padding-bottom: 15px;
+    padding-right: 10px;
+    border-bottom: 1px solid #f3f3f4;
+    overflow: hidden;
+  }
+  .right-title {
+    font-size: 1.4rem;
+    color: #999999;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .list-icon {
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+  }
+  .lone-icon {
+    height: 14px;
+  }
+  .right-info {
+    height: 15px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    .user-icon {
+      margin-right: 15px;
+      width: 30px;
+      height: 30px;
+    }
+    img {
+      width: 6px;
+      height: 10px;
+    }
+    span {
+      flex: 1;
+      color: #666666;
+      font-size: 1.4rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .list-last {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f3f3f4;
+    img {
+      width: 6px;
+      height: 10px;
+    }
+  }
+  .first-list {
+    height: 30px;
+  }
 }

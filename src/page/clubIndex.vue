@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <header>
+  <div class="index-container">
+    <header class="index-header">
       <img class="header-back" src="../assets/imgs/App/iStock_000045462236_Full@2x.png">
       <div class="index-header-container">
         <div class="header-title-container">
@@ -73,7 +73,7 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 已选课程
           </div>
-          <div class="title-container-right-index">
+          <div class="title-container-right title-right-index">
             全部
             <img src="../assets/imgs/App/check-icon.png">
           </div>
@@ -90,7 +90,7 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 可选课程
           </div>
-          <div class="title-container-right-index">
+          <div class="title-container-right title-right-index">
             全部
             <img src="../assets/imgs/App/check-icon.png">
           </div>

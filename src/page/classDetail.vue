@@ -56,8 +56,10 @@
             <div class="right-title">课程时间</div>
             <div class="right-info">
               <span>12月25日14:00-16:00</span>
-              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
+          </div>
+          <div class="list-last">
+            <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
           </div>
         </li>
         <li class="class-list-item">
@@ -68,8 +70,10 @@
             <div class="right-title">课程地点</div>
             <div class="right-info">
               <span>东升科技园</span>
-              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
+          </div>
+          <div class="list-last">
+            <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
           </div>
         </li>
         <li class="class-list-item">
@@ -80,8 +84,10 @@
             <div class="right-title">服务区域</div>
             <div class="right-info">
               <span>朝阳区</span>
-              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
+          </div>
+          <div class="list-last">
+            <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
           </div>
         </li>
         <li class="class-list-item">
@@ -92,8 +98,10 @@
             <div class="right-title">服务方式</div>
             <div class="right-info">
               <span>朝阳区</span>
-              <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
+          </div>
+          <div class="list-last">
+            <img src="../assets/imgs/classDetails/class-list-enter-icon.png" />
           </div>
         </li>
       </ul>
@@ -185,14 +193,14 @@
     </section>
     <footer class="detail-footer-button">
       <a class="icon-btn-one">
-        <img  src="../assets/imgs/classDetails/button-icon-1.png">
+        <img src="../assets/imgs/classDetails/button-icon-1.png">
       </a>
       <a class="icon-btn-two">
-        <img  src="../assets/imgs/classDetails/button-icon-2.png">
+        <img src="../assets/imgs/classDetails/button-icon-2.png">
       </a>
       <a class="footer-main-btn">
-      <span class="btn-title">立即预定</span>
-      <span class="btn-info">已报名9人，还剩1人</span>
+        <span class="btn-title">立即预定</span>
+        <span class="btn-info">已报名9人，还剩1人</span>
       </a>
     </footer>
   </div>
