@@ -3,6 +3,7 @@ const home = r => require.ensure([], () => r(require('../page/clubIndex')), 'hom
 const detail = r => require.ensure([], () => r(require('../page/classDetail')), 'detail')
 const signup = r => require.ensure([], () => r(require('../page/classSignUp')), 'signup')
 const address = r => require.ensure([], () => r(require('../page/classAddress')), 'address')
+const addrDetail = r => require.ensure([], () => r(require('../page/addressDetail')), 'addrDetail')
 
 export default [{
   path: '/',
@@ -26,6 +27,10 @@ export default [{
     {
       path: '/address',
       component: address
+    },
+    {
+      path: '/addrDetail',
+      component: addrDetail
     }
   ]
 }]
