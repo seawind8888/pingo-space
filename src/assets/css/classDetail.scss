@@ -212,3 +212,10 @@ header {
   }
 }
 
+.club-list-container {
+    &:nth-last-child(1) {
+      .class-item-container .item-container {
+        border-bottom: none
+      }
+    }
+}

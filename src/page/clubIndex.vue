@@ -11,7 +11,7 @@
           <div class="user-top">
             <img class="user-portrait" src="../assets/imgs/App/img_test.png">
             <div class="number-container">
-              <h1>10</h1>
+              <h1 class="number-tag">10</h1>
               <span>次</span>
             </div>
             <div class="number-container">
@@ -23,7 +23,7 @@
               <span>次</span>
             </div>
             <div class="number-container">
-              <span>2017.01.31</span>
+              <span class="line-time-container">2017.01.31</span>
             </div>
           </div>
           <div class="user-bottom">
@@ -105,29 +105,33 @@
           <div class="class-time-container">
             <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
           </div>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
+          <div class="class-part-container">
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+          </div>
           <div class="class-time-container">
             <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
           </div>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
+          <div class="class-part-container">
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+          </div>
         </div>
         <div v-show="ageStage=='small'">
           <router-link :to="{path: 'detail'}" class="class-list-container">
