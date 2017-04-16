@@ -199,7 +199,9 @@
         <img src="../assets/imgs/classDetails/button-icon-2.png">
       </a>
       <a class="footer-main-btn">
-        <span class="btn-title">立即预定</span>
+        <router-link :to="{ path: '/signUp'}">
+          <span class="btn-title">立即预定</span>
+        </router-link>
         <span class="btn-info">已报名9人，还剩1人</span>
       </a>
     </footer>

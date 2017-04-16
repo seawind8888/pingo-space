@@ -27,6 +27,7 @@
         </div>
       </div>
       <div class="section-info">
+      <router-link :to="{ path: '/address'}">
         <div class="section-info-container">
           <p>东升科技园
           <span class="info-tag">
@@ -34,6 +35,7 @@
           </span>
           </p>
         </div>
+        </router-link>
         <div class="section-info-container">
           <p>2017.09.09（周一）10-12点
           <span class="info-tag">
