@@ -68,15 +68,17 @@
           <p>报名续费</p>
         </div>
       </section>
-      <section class="have-choose-subject">
+      <section class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
             <i class="title-icon"></i> 已选课程
           </div>
-          <div class="title-container-right title-right-index">
-            全部
-            <img src="../assets/imgs/App/check-icon.png">
-          </div>
+          <router-link :to="{path: 'all'}">
+            <div class="title-container-right title-right-index">
+              全部
+              <img src="../assets/imgs/App/check-icon.png">
+            </div>
+          </router-link>
         </div>
         <div class="have-choose-class">
           <router-link :to="{path: 'detail'}" class="class-list-container">
@@ -85,7 +87,7 @@
           </router-link>
         </div>
       </section>
-      <section class="have-choose-subject">
+      <section class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
             <i class="title-icon"></i> 可选课程
@@ -134,20 +136,31 @@
           </div>
         </div>
         <div v-show="ageStage=='small'">
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
-          <router-link :to="{path: 'detail'}" class="class-list-container">
-            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-              :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-          </router-link>
+          <div class="class-time-container">
+            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+          </div>
+          <div class="class-part-container">
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+            <router-link :to="{path: 'detail'}" class="class-list-container">
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
+                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            </router-link>
+          </div>
         </div>
         <div v-show="ageStage=='middle'">
-
+          <div class="no-class-block">
+            <img src="../assets/imgs/App/class-block.png">
+            <div class="block-info">小编正在努力排课中...</div>
+          </div>
         </div>
         <div v-show="ageStage=='high'">
-
+          <div class="no-class-block">
+            <img src="../assets/imgs/App/class-block.png">
+            <div class="block-info">小编正在努力排课中...</div>
+          </div>
         </div>
       </section>
     </div>

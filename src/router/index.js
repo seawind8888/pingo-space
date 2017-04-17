@@ -1,5 +1,7 @@
 import App from '../App'
 const home = r => require.ensure([], () => r(require('../page/clubIndex')), 'home')
+const all = r => require.ensure([], () => r(require('../page/classAll')), 'all')
+const login = r => require.ensure([], () => r(require('../page/clubLogin')), 'login')
 const detail = r => require.ensure([], () => r(require('../page/classDetail')), 'detail')
 const signUp = r => require.ensure([], () => r(require('../page/classSignUp')), 'signUp')
 const address = r => require.ensure([], () => r(require('../page/classAddress')), 'address')
@@ -15,6 +17,14 @@ export default [{
     {
       path: '/home',
       component: home
+    },
+    {
+      path: '/all',
+      component: all
+    },
+    {
+      path: '/login',
+      component: login
     },
     {
       path: '/detail',

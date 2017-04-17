@@ -17,6 +17,13 @@ const router = new Router({
   routes
 })
 
+console.log(this.$router)
+
+// router.beforeEach((to, from, next) => {
+//   document.title = this.$router.name
+//   next()
+// })
+
 new Vue({
   router
 }).$mount('#app')

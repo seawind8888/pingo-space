@@ -137,23 +137,14 @@
     }
   }
 }
-
+.choose-class-container {
+  margin-top: 15px;
+}
 .section-title-container {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  font-size: 1.4rem;
   .title-container-left {
     flex: 1;
     display: flex;
     align-items: center;
-  }
-  .title-icon {
-    display: inline-block;
-    width: 3px;
-    height: 14px;
-    background: #2F3044;
-    margin-right: 12px;
   }
   .title-right-index {
     font-size: 1.4rem;
@@ -206,6 +197,22 @@
     height: 12px;
     display: inline-block;
     margin-right: 15px;
+  }
+}
+.no-class-block {
+  padding-top: 40px;
+  position: relative;
+  img {
+    width: 200px;
+    height: 134px;
+  }
+  .block-info {
+    font-size: 1.2rem;
+    color: #898ba8;
+    font-weight: bold;
+    position: relative;
+    bottom: 30px;
+    padding-left: 14px;
   }
 }
 .class-part-container {
