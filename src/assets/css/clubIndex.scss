@@ -47,10 +47,12 @@
     width: 40px;
     height: 40px;
     border-radius: 100%;
+    position: relative;
+    top: 2px;
   }
 
   .number-container {
-    margin-bottom: 10px;
+    padding-top: 6px;
     // display: flex;
     flex: 1;
     // align-items: center;
@@ -103,11 +105,12 @@
   }
   .vip-info-container {
     font-size: .9rem;
+    padding: 0 4px;
     background: #898BA8;
     color: #ffffff;
     position: absolute;
-    bottom: -10px;
-    left: 3px;
+    bottom: -14px;
+    left: -2px;
   }
 }
 
