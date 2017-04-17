@@ -40,6 +40,7 @@
   }
   .user-top {
     width: 100%;
+    margin-left: 14px;
     display: flex;
     border-bottom: 1px #ffffff solid;
   }
@@ -49,6 +50,7 @@
     border-radius: 100%;
     position: relative;
     top: 2px;
+    right: 14px;
   }
 
   .number-container {
@@ -95,13 +97,19 @@
   }
   .user-bottom {
     width: 100%;
+    margin-left: 14px;
     display: flex;
+    .number-container {
+      padding-top: 0;
+    }
   }
   .name-container {
     width: 40px;
     font-size: 1.3rem;
     color: #ffffff;
-    margin-top: 8px;
+    margin-top: 6px;
+    position: relative;
+    right: 14px;
   }
   .vip-info-container {
     font-size: .9rem;
@@ -109,7 +117,7 @@
     background: #898BA8;
     color: #ffffff;
     position: absolute;
-    bottom: -14px;
+    bottom: -16px;
     left: -2px;
   }
 }
