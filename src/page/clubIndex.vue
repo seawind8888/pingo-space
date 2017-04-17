@@ -92,10 +92,12 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 可选课程
           </div>
-          <div class="title-container-right title-right-index">
-            全部
-            <img src="../assets/imgs/App/check-icon.png">
-          </div>
+          <router-link :to="{path: 'all'}">
+            <div class="title-container-right title-right-index">
+              全部
+              <img src="../assets/imgs/App/check-icon.png">
+            </div>
+          </router-link>
         </div>
         <div class="channel-tab-container">
           <div @click="selectStage('all')" :class="ageStage=='all'?'item-on':''" class="tab-item">全部</div>

@@ -14,10 +14,9 @@ if ('addEventListener' in document) {
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
   routes
 })
-
-console.log(this.$router)
 
 // router.beforeEach((to, from, next) => {
 //   document.title = this.$router.name
