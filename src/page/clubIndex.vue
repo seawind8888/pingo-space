@@ -171,6 +171,7 @@
 
 <script>
   import classItem from '../components/classItem'
+  import axios from 'axios'
   export default {
     data() {
       return {
@@ -178,12 +179,26 @@
       }
     },
     mounted() {
-      var self = this
+      this.fetchData()
     },
     components: {
       classItem
     },
     methods: {
+      fetchData() {
+        axios('/api/learns', {
+            method: 'get',
+            headers: {
+              'Authorization': 'Token 5a11928d4c904d1392e1a0333c854251'
+            }
+          })
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+      },
       selectStage(stage) {
         this.ageStage = stage
       }
