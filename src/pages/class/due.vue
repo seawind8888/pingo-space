@@ -2,7 +2,7 @@
   <div class="container sign-up-container">
     <header class="sign-up-header">
       <div class="header-title-container">
-        <img src="../assets/imgs/classSignUp/title-icon.png" /> 欧美小学课外活动俱乐部
+        <img src="../../assets/imgs/classSignUp/title-icon.png" /> 欧美小学课外活动俱乐部
       </div>
       <div class="header-item-container">
         <div class="item-left">
@@ -31,7 +31,7 @@
         <div class="section-info-container">
           <p>东升科技园
           <span class="info-tag">
-          <img class="info-icon" src="../assets/imgs/classDetails/class-list-enter-icon.png"/>
+          <img class="info-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png"/>
           </span>
           </p>
         </div>
@@ -39,7 +39,7 @@
         <div class="section-info-container">
           <p>2017.09.09（周一）10-12点
           <span class="info-tag">
-          <img class="info-icon" src="../assets/imgs/classDetails/class-list-enter-icon.png"/>
+          <img class="info-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png"/>
           </span>
           </p>
         </div>
@@ -83,6 +83,6 @@
 
 </script>
 <style lang="scss">
-  @import '../assets/css/classSignUp.scss';
+  @import '../../assets/css/classSignUp.scss';
 
 </style>

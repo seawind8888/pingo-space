@@ -17,6 +17,6 @@
   export default {}
 </script>
 <style lang="scss">
-  @import '../assets/css/enterPages.scss';
+  @import '../../assets/css/enterPages.scss';
 
 </style>

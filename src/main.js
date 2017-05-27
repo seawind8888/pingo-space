@@ -1,7 +1,14 @@
 import Vue from 'vue'
-import routes from './router'
-import Router from 'vue-router'
 import FastClick from 'fastclick'
+import VueRouter from 'vue-router'
+import App from './App'
+import routes from './router'
+
+
+Vue.use(VueRouter)
+const router = new VueRouter({
+	routes
+})
 
 Vue.config.productionTip = false
 
@@ -11,17 +18,12 @@ if ('addEventListener' in document) {
     }, false);
 }
 
-Vue.use(Router)
-
-const router = new Router({
-  routes
-})
-
 // router.beforeEach((to, from, next) => {
 //   document.title = this.$router.name
 //   next()
 // })
 
 new Vue({
-  router
+  router,
+  ...App
 }).$mount('#app')

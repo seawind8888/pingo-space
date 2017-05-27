@@ -73,7 +73,7 @@
           <div class="title-container-left">
             <i class="title-icon"></i> 已选课程
           </div>
-          <router-link :to="{path: 'all'}">
+          <router-link to="/home/all">
             <div class="title-container-right title-right-index">
               全部
               <img src="../assets/imgs/App/check-icon.png">
