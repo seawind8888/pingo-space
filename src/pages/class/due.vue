@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="section-info">
-      <router-link :to="{ path: '/address'}">
+      <router-link to="/address">
         <div class="section-info-container">
           <p>东升科技园
           <span class="info-tag">
@@ -83,6 +83,5 @@
 
 </script>
 <style lang="scss">
-  @import '../../assets/css/classSignUp.scss';
-
+  @import '../../assets/css/classDue.scss';
 </style>

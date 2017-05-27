@@ -55,7 +55,7 @@ export default [
     component: classDue
   },
   {
-    path: '/classAddress',
+    path: '/address',
     component: classAddress
   },
   {

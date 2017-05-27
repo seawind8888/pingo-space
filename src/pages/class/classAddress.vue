@@ -30,7 +30,7 @@
         </div>
       </li>
     </ul>
-    <router-link :to="{ path: '/addrDetail'}">
+    <router-link to="/addrDetail">
       <div class="add-addr-btn">
         <img src="../../assets/imgs/classAddr/add-icon.png">添加地址
       </div>

@@ -5,15 +5,18 @@
       <img src="../assets/imgs/quick-start.png">
     </div>
     <div class="btn-container">
-        <a class="enter-btn">登录</a>
-        <a class="enter-btn right-btn">注册</a>
+      <router-link class="enter-btn" to='/login'>
+        登录
+      </router-link>
+      <router-link class="enter-btn right-btn" to='/regist'>
+        注册
+      </router-link>
     </div>
   </div>
 </template>
 <script>
-  export default {}
+export default {}
 </script>
 <style lang="scss">
-  @import '../assets/css/enterPages.scss';
-
+@import '../assets/css/enterPages.scss';
 </style>
