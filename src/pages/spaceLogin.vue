@@ -10,6 +10,6 @@
   export default {}
 </script>
 <style lang="scss">
-  @import '../assets/css/clubLogin.scss';
+  @import '../assets/css/enterPages.scss';
 
 </style>
