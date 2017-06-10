@@ -3,6 +3,7 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import routes from './router'
+// import $ from 'webpack-zepto'
 
 
 Vue.use(VueRouter)

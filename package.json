@@ -17,8 +17,11 @@
     "node-sass": "^4.5.0",
     "phantomjs-prebuilt": "^2.1.14",
     "sass-loader": "^6.0.3",
+    "sinon": "^2.1.0",
     "vue": "^2.2.2",
-    "vue-router": "^2.2.0"
+    "vue-router": "^2.2.0",
+    "webpack-zepto": "0.0.1",
+    "zepto": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
