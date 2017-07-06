@@ -15,8 +15,20 @@
   </div>
 </template>
 <script>
-export default {}
+import axios from 'axios'
+
+export default {
+  methods: {
+
+  },
+  created() {
+    let curTime = new Date()
+    if (localStorage.time > curTime) {
+      this.$router.push('./home')
+    }
+  }
+}
 </script>
 <style lang="scss">
-@import '../assets/css/enterPages.scss';
+@import '../assets/css/entryPages.scss';
 </style>

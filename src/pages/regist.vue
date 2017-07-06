@@ -13,6 +13,7 @@
       <a>《平行国服务协议》</a>
     </div>
     <toast v-model="toastInfo.isShow" type="text" :time="1000" is-show-mask :text="toastInfo.message"></toast>
+    <toast v-model="toastInfo.success"  :time="1000" is-show-mask :text="'注册成功'"></toast>
   </div>
 </template>
 <script>
@@ -32,7 +33,8 @@ export default {
       },
       toastInfo: {
         message: '',
-        isShow: false
+        isShow: false,
+        success: false
       }
     }
   },
@@ -45,12 +47,13 @@ export default {
       var self = this
       self.verifyCode.getting = true
       setInterval(() => {
-        if(!self.verifyCode.count){
+        if (self.verifyCode.count < 2) {
           self.verifyCode.getting = false
+          this.verifyCode.count = 60
           return
         }
         this.verifyCode.count--
-      },1000)
+      }, 1000)
       //开始发验证码
       axios({
         method: 'post',
@@ -60,19 +63,30 @@ export default {
           "Accept": "application/json",
           "Accept-Language": "zh-hans"
         },
+        validateStatus: (status) => {
+          console.log(status)
+          return status >= 200 && status <= 400;//默认
+        },
         data: {
           mobile: self.userName,
           scene: 0,
         }
       })
         .then((res) => {
-          self.toastInfo.message = '验证码已发送'
-          self.toastInfo.isShow = true
+          console.log(res)
+                      self.toastInfo.success = true
+
+          // if (res.status == 200) {
+          //   // self.toastInfo.message = '注册成功'
+          //   self.toastInfo.success = true
+          // } else {
+          //   self.toastInfo.message = res.data.message
+          //   self.toastInfo.isShow = true
+          // }
         })
         .catch((err) => {
           console.log(err)
-          self.toastInfo.message = '验证码发送失败，请稍后重试',
-          self.toastInfo.isShow = true
+          // return err
         })
     },
     signUp() {
@@ -133,5 +147,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../assets/css/enterPages.scss';
+@import '../assets/css/entryPages.scss';
 </style>

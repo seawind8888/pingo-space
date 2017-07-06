@@ -1,6 +1,6 @@
 import App from './App'
 
-const enter = r => require.ensure([], () => r(require('./pages/enter')))
+const entry = r => require.ensure([], () => r(require('./pages/entry')))
 const login = r => require.ensure([], () => r(require('./pages/login')))
 const regist = r => require.ensure([], () => r(require('./pages/regist')))
 const passForgot = r => require.ensure([], () => r(require('./pages/pass/forgot')))
@@ -16,11 +16,11 @@ const addrDetail = r => require.ensure([], () => r(require('./pages/class/addres
 export default [
   {
     path: '',
-    redirect: '/enter'
+    redirect: '/entry'
   },
   {
-    path: '/enter',
-    component: enter
+    path: '/entry',
+    component: entry
   },
   {
     path: '/login',
