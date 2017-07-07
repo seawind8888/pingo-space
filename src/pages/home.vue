@@ -5,7 +5,7 @@
       <div class="index-header-container">
         <div class="header-title-container">
           <img src="../assets/imgs/App/index-header-icon.png">
-          <span>欧美小学课外活动俱乐部</span>
+          <span>{{learnex.detail}}</span>
         </div>
         <div class="user-info-container">
           <div class="user-top">
@@ -164,12 +164,15 @@
 <script>
 import classItem from '../components/classItem'
 import axios from 'axios'
-import { mapActions } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       ageStage: 'all'
     }
+  },
+  computed: {
+    ...mapState(['learnex', 'schoolex'])
   },
   components: {
     classItem
