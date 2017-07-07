@@ -3,7 +3,7 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import routes from './router'
-// import $ from 'webpack-zepto'
+import store from './vuex'
 
 
 Vue.use(VueRouter)
@@ -19,12 +19,9 @@ if ('addEventListener' in document) {
     }, false);
 }
 
-// router.beforeEach((to, from, next) => {
-//   document.title = this.$router.name
-//   next()
-// })
 
 new Vue({
   router,
+  store,
   ...App
 }).$mount('#app')

@@ -50,6 +50,7 @@ export default {
           self.toastInfo.isShow = true
           localStorage.token = res.data.token.key
           localStorage.time = Date.parse(res.data.token.expires_at)
+          localStorage.pk = Date.parse(res.data.user.pk)
           setTimeout(function () {
             self.$router.push('/home')
           }, 1200);

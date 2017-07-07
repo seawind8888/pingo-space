@@ -82,8 +82,7 @@
         </div>
         <div class="have-choose-class">
           <router-link to="/detail" class="class-list-container">
-            <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'"
-              :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
           </router-link>
         </div>
       </section>
@@ -111,16 +110,13 @@
           </div>
           <div class="class-part-container">
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
           </div>
           <div class="class-time-container">
@@ -128,12 +124,10 @@
           </div>
           <div class="class-part-container">
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
           </div>
         </div>
@@ -143,12 +137,10 @@
           </div>
           <div class="class-part-container">
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
             <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'"
-                :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
             </router-link>
           </div>
         </div>
@@ -170,44 +162,48 @@
 </template>
 
 <script>
-  import classItem from '../components/classItem'
-  import axios from 'axios'
-  export default {
-    data() {
-      return {
-        ageStage: 'all'
-      }
+import classItem from '../components/classItem'
+import axios from 'axios'
+import { mapActions } from 'vuex'
+export default {
+  data() {
+    return {
+      ageStage: 'all'
+    }
+  },
+  components: {
+    classItem
+  },
+  methods: {
+    fetchData() {
+      axios('/api/learns', {
+        method: 'get',
+        headers: {
+          'Authorization': 'Token 5a11928d4c904d1392e1a0333c854251'
+        }
+      })
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     },
-    mounted() {
-      this.fetchData()
-    },
-    components: {
-      classItem
-    },
-    methods: {
-      fetchData() {
-        axios('/api/learns', {
-            method: 'get',
-            headers: {
-              'Authorization': 'Token 5a11928d4c904d1392e1a0333c854251'
-            }
-          })
-          .then((res) => {
-            console.log(res)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      },
-      selectStage(stage) {
-        this.ageStage = stage
-      }
+    selectStage(stage) {
+      this.ageStage = stage
+    }
+  },
+  created() {
+    if (localStorage.token) {
+      this.$store.dispatch('getHomeInfo',localStorage.token)
+    } else {
+      this.$store.dispatch('getHomeInfo')
     }
   }
+}
 
 </script>
 
 <style lang="scss">
-  @import '../assets/css/clubIndex.scss';
-
+@import '../assets/css/clubIndex.scss';
 </style>
