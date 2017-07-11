@@ -1,61 +1,63 @@
 .class-item-container {
-  padding: 0 15px;
-  .item-container {
-    margin-left: 125px;
-    padding: 15px 0;
-    border-bottom: 1px solid #e5e5e5;
-    padding-right: 54px;
-    &:after {
-      content: '';
-      display: block;
-      clear: both;
+    padding: 0 15px;
+    .item-container {
+        margin-left: 125px;
+        padding: 15px 0;
+        border-bottom: 1px solid #e5e5e5;
+        padding-right: 54px;
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
     }
-  }
-  .item-left {
-    width: 110px;
-    margin-left: -125px;
-    float: left;
-    img {
-      width: 100%;
+    .item-left {
+        width: 110px;
+        margin-left: -125px;
+        float: left;
+        img {
+            width: 100%;
+        }
     }
-  }
-  .item-middle {
-    float: left;
-    width: 100%;
-    .item-title-container {
-      width: 100%;
-      margin-bottom: 8px;
-      font-size: 1.4rem;
-      text-align: left
+    .item-middle {
+        float: left;
+        width: 100%;
+        .item-title-container {
+            width: 100%;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            text-align: left;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .item-info-container {
+            text-align: left;
+            line-height: 15px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
     }
-    .item-info-container {
-      text-align: left;
-      line-height: 15px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+    .item-right {
+        width: 50px;
+        float: left;
+        margin-right: -100%;
+        text-align: right;
+        padding-right: 5px;
+        .right-info-one {
+            margin-bottom: 6px;
+        }
+        .portrait-container {
+            margin-top: 10px;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center
+        }
+        img {
+            width: 25px;
+            height: 25px
+        }
     }
-  }
-  .item-right {
-    width: 50px;
-    float: left;
-    margin-right: -100%;
-    text-align: right;
-    padding-right: 5px;
-    .right-info-one {
-      margin-bottom: 6px;
-    }
-    .portrait-container {
-      margin-top: 10px;
-      display: flex;
-      width: 100%;
-      justify-content: flex-end;
-      align-items: center
-    }
-    img {
-      width: 25px;
-      height: 25px
-    }
-  }
 }
-

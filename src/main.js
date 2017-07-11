@@ -4,19 +4,24 @@ import VueRouter from 'vue-router'
 import App from './App'
 import routes from './router'
 import store from './vuex'
+import * as filters from './filters'
 
 
 Vue.use(VueRouter)
 const router = new VueRouter({
-	routes
+  routes
+})
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
 })
 
 Vue.config.productionTip = false
 
 if ('addEventListener' in document) {
-    document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-    }, false);
+  document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body);
+  }, false);
 }
 
 

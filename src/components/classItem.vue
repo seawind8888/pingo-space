@@ -6,7 +6,7 @@
         <div class="item-middle">
           <div class="item-title-container">{{itemTitle}}</div>
           <div class="item-info-container">
-            通用年龄:4-5岁
+            通用年龄:{{itemAgeMin}}-{{itemAgeMax}}岁
           </div>
           <div class="item-info-container">
             时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp间: {{itemTime}}
@@ -27,7 +27,7 @@
 </template>
 <script>
   export default {
-    props: ['itemTitle', 'userPortrait', 'itemCover', 'itemTime', 'itemAddress']
+    props: ['itemTitle', 'userPortrait', 'itemCover', 'itemTime', 'itemAddress','itemAge', 'itemAgeMin',  'itemAgeMax']
   }
 
 </script>

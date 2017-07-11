@@ -1,5 +1,5 @@
 <template>
-  <div class="index-container">
+  <div v-if="isReady" class="index-container">
     <header class="index-header">
       <img class="header-back" src="../assets/imgs/App/iStock_000045462236_Full@2x.png">
       <div class="index-header-container">
@@ -105,43 +105,40 @@
           <div @click="selectStage('high')" :class="ageStage=='high'?'item-on':''" class="tab-item">9-12岁</div>
         </div>
         <div v-show="ageStage=='all'">
-          <div class="class-time-container">
-            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+          <!--<div class="class-time-container">
+                          <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+                        </div>-->
+          <div v-if="schoolex" class="class-part-container">
+            <!--<router-link to="detail" class="class-list-container">
+                  <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                </router-link>-->
+            <ul>
+              <li :key="item.pk" v-for="item in schoolex">
+                <router-link to="detail" class="class-list-container">
+                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.topic.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                </router-link>
+              </li>
+            </ul>
+  
           </div>
-          <div class="class-part-container">
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
-          </div>
-          <div class="class-time-container">
-            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
-          </div>
-          <div class="class-part-container">
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
+          <div v-else class="no-class-block">
+            <img src="../assets/imgs/App/class-block.png">
+            <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
         <div v-show="ageStage=='small'">
-          <div class="class-time-container">
-            <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+          <div v-if="schoolex" class="class-part-container">
+            <ul>
+              <li :key="item.pk" v-for="item in ageStageFilter(schoolex,4,5)">
+                <router-link to="detail" class="class-list-container">
+                  <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="'2017-03-11 14：00'" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                </router-link>
+              </li>
+            </ul>
           </div>
-          <div class="class-part-container">
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
-            <router-link to="detail" class="class-list-container">
-              <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-            </router-link>
+          <div v-else class="no-class-block">
+            <img src="../assets/imgs/App/class-block.png">
+            <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
         <div v-show="ageStage=='middle'">
@@ -165,6 +162,7 @@
 import classItem from '../components/classItem'
 import axios from 'axios'
 import { mapState } from 'vuex'
+import { fmtDate } from '../utils.js'
 export default {
   data() {
     return {
@@ -172,12 +170,16 @@ export default {
     }
   },
   computed: {
-    ...mapState(['learnex', 'schoolex'])
+    ...mapState(['learnex', 'schoolex', 'isReady']),
+    
   },
   components: {
     classItem
   },
   methods: {
+    getClassTimeFormat (time) {
+      return fmtDate(Date(time), 'yyyy-MM-dd hh:mm');
+    },
     fetchData() {
       axios('/api/learns', {
         method: 'get',
@@ -194,11 +196,16 @@ export default {
     },
     selectStage(stage) {
       this.ageStage = stage
+    },
+    ageStageFilter(items, minAge, maxAge) {
+      return items.filter((item) => {
+        return item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
+      })
     }
   },
   created() {
     if (localStorage.token) {
-      this.$store.dispatch('getHomeInfo',localStorage.token)
+      this.$store.dispatch('getHomeInfo', localStorage.token)
     } else {
       this.$store.dispatch('getHomeInfo')
     }

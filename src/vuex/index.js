@@ -11,7 +11,8 @@ const store = new Vuex.Store({
     state: {
         learnex: '',
         learn: '',
-        schoolex: ''
+        schoolex: '',
+        isReady: false
     }
 })
 
