@@ -1,5 +1,5 @@
-exports.fmtDate = (date, fmt) => { // author: meizz
-    console.log(date)
+exports.fmtDate = (date) => { // author: meizz
+    var fmt = 'yyyy-MM-dd hh:mm'
     var o = {
         'M+': date.getMonth() + 1, // 月份
         'd+': date.getDate(), // 日

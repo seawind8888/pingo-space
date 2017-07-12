@@ -106,49 +106,67 @@
         </div>
         <div v-show="ageStage=='all'">
           <!--<div class="class-time-container">
-                          <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
-                        </div>-->
-          <div v-if="schoolex" class="class-part-container">
+                              <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
+                            </div>-->
+          <div  class="class-part-container">
             <!--<router-link to="detail" class="class-list-container">
-                  <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-                </router-link>-->
+                      <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                    </router-link>-->
             <ul>
               <li :key="item.pk" v-for="item in schoolex">
                 <router-link to="detail" class="class-list-container">
-                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.topic.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
                 </router-link>
               </li>
             </ul>
   
           </div>
-          <div v-else class="no-class-block">
+          <div v-if="emptyFilter" class="no-class-block">
             <img src="../assets/imgs/App/class-block.png">
             <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
         <div v-show="ageStage=='small'">
-          <div v-if="schoolex" class="class-part-container">
+          <div  class="class-part-container">
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,4,5)">
                 <router-link to="detail" class="class-list-container">
-                  <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="'2017-03-11 14：00'" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
                 </router-link>
               </li>
             </ul>
           </div>
-          <div v-else class="no-class-block">
+          <div v-if="emptyFilter" class="no-class-block">
             <img src="../assets/imgs/App/class-block.png">
             <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
         <div v-show="ageStage=='middle'">
-          <div class="no-class-block">
+          <div class="class-part-container">
+            <ul>
+              <li :key="item.pk" v-for="item in ageStageFilter(schoolex,6,8)">
+                <router-link to="detail" class="class-list-container">
+                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+          <div v-if="emptyFilter" class="no-class-block">
             <img src="../assets/imgs/App/class-block.png">
             <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
         <div v-show="ageStage=='high'">
-          <div class="no-class-block">
+          <div class="class-part-container">
+            <ul>
+              <li :key="item.pk" v-for="item in ageStageFilter(schoolex,9,12)">
+                <router-link to="detail" class="class-list-container">
+                  <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+          <div v-if="emptyFilter" class="no-class-block">
             <img src="../assets/imgs/App/class-block.png">
             <div class="block-info">小编正在努力排课中...</div>
           </div>
@@ -166,19 +184,20 @@ import { fmtDate } from '../utils.js'
 export default {
   data() {
     return {
-      ageStage: 'all'
+      ageStage: 'all',
+      emptyFilter: false
     }
   },
   computed: {
     ...mapState(['learnex', 'schoolex', 'isReady']),
-    
+
   },
   components: {
     classItem
   },
   methods: {
-    getClassTimeFormat (time) {
-      return fmtDate(Date(time), 'yyyy-MM-dd hh:mm');
+    getClassTimeFormat(time) {
+      return fmtDate(new Date(Date.parse(time)));
     },
     fetchData() {
       axios('/api/learns', {
@@ -199,7 +218,11 @@ export default {
     },
     ageStageFilter(items, minAge, maxAge) {
       return items.filter((item) => {
-        return item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
+        let itemFitler = item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
+        if(itemFitler) {
+          return itemFitler
+        }
+        this.emptyFilter = true
       })
     }
   },
