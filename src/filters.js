@@ -1,6 +1,6 @@
 
-exports.getClassTime = (time) => {
-    return fmtDate(Date(time), 'yyyy-MM-dd hh:mm');
+export function getClassTime (time) {
+    return fmtDate(new Date(Date.parse(time)), 'yyyy-MM-dd hh:mm');
 };
 
 const fmtDate = (date, fmt) => { // author: meizz

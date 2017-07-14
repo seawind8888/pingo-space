@@ -29,6 +29,28 @@ export function getSchoolexInfo({
     })
 }
 
+//获取已选课程信息
+export function getEnrollmentsInfo({
+  commit,
+  state
+}, token, pk) {
+  return fetchEnrollmentsInfo(token, pk)
+    .then((res) => {
+      commit('FETCH_ENROLLMENTS_FINISH', [res.data])
+    })
+}
+
+//获取用户信息
+export function getUserInfo({
+  commit,
+  state
+}, token, pk) {
+  return fetchUserInfo(token, pk)
+    .then((res) => {
+      commit('FETCH_USER_FINISH', [res.data])
+    })
+}
+
 //异步获取pkid后获取排课
 export async function getHomeInfo({
   dispatch

@@ -17,11 +17,36 @@ export const fetchLearnex = (token) => {
 
 
 export const fetchSchoolex = (token,learn) => {
-  console.log(2)
   return axios({
       method: 'get',
       // url: '/api/auth/login',
       url: `${baseURL}/api/schoolex?learn=${learn}`,
+      headers: {
+        "Accept": "application/json",
+        "Accept-Language": "zh-hans",
+        "Authorization": `Token ${token}`
+      }
+    })
+}
+
+export const fetchEnrollmentsInfo = (token,pk) => {
+  return axios({
+      method: 'get',
+      // url: '/api/auth/login',
+      url: `${baseURL}/api/users/${key}/enrollments`,
+      headers: {
+        "Accept": "application/json",
+        "Accept-Language": "zh-hans",
+        "Authorization": `Token ${token}`
+      }
+    })
+}
+
+export const fetchUserInfo = (token,pk) => {
+  return axios({
+      method: 'get',
+      // url: '/api/auth/login',
+      url: `${baseURL}/api/users/${key}/userrests`,
       headers: {
         "Accept": "application/json",
         "Accept-Language": "zh-hans",
