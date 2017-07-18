@@ -29,6 +29,19 @@ export const fetchSchoolex = (token,learn) => {
     })
 }
 
+export const fetchCellSchoolex = (token,id) => {
+  return axios({
+      method: 'get',
+      // url: '/api/auth/login',
+      url: `${baseURL}/api/schoolex/${id}`,
+      headers: {
+        "Accept": "application/json",
+        "Accept-Language": "zh-hans",
+        "Authorization": `Token ${token}`
+      }
+    })
+}
+
 export const fetchEnrollmentsInfo = (token,pk) => {
   return axios({
       method: 'get',

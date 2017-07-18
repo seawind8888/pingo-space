@@ -7,6 +7,12 @@ export function FETCH_SCHOOLEX_FINISH(state, [schoolex]) {
     state.isReady = true
 }
 
+export function FETCH_SCHOOLEX_CELL_FINISH(state, schoolexCell) {
+    state.schoolexCell = schoolexCell
+    state.isReady = true
+}
+
+
 export function FETCH_ENROLLMENTS_FINISH(state, [enrollments]) {
     state.enrollments = enrollments
 }

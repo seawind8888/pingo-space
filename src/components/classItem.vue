@@ -19,8 +19,9 @@
       <div class="item-right">
         <p class="right-info-one">{{ itemStatus | enrollmentsStatus(itemStatus) }}</p>
         <p>{{itemEnrollmentsCount}}/{{itemMaxHumans}}</p>
-        <div class="portrait-container">
-          <img src="../assets/imgs/App/img_test.png">
+        <div v-if="userPortrait.length>0" class="portrait-container">
+          <!-- <img src="../assets/imgs/App/img_test.png"> -->
+          <img :src="userPortrait[0].cover">
         </div>
       </div>
     </div>

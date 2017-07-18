@@ -1,14 +1,14 @@
 <template>
-  <div class="detail-container">
+  <div v-if="isReady" class="detail-container">
     <header>
-      <img src="../../assets/imgs/classDetails/banner.png" />
+      <img :src="schoolexCell.cover" />
       <div class="detail-header-container">
-        <h1 class="class-title">单次活动页面标题标题标题标题标题标题标题标题标题标题</h1>
-        <p class="class-price">￥200/次</p>
+        <h1 class="class-title">{{schoolexCell.detail}}</h1>
+        <p class="class-price">{{schoolexCell.price}}/次</p>
         <p class="class-info">1对3，可3人均摊费用，每人约122元</p>
-        <p class="class-info">时长：2.0小时</p>
+        <p class="class-info">时长：{{schoolexCell.timecost}}小时</p>
         <p class="class-info info-bottom">
-          <img class="info-icon" src='../../assets/imgs/classDetails/index-header-icon.png' /> 欧美幼儿俱乐部
+           <img class="info-icon" :src="schoolexCell.learn.icon" /> {{schoolexCell.learn.detail}} 
         </p>
       </div>
     </header>
@@ -20,12 +20,8 @@
       </div>
       <div class="class-content">
         <div class="section-content">
-          <h1>课程介绍</h1>
-          <p>介绍大篇幅文字介绍大篇幅文字介绍大篇幅文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
-        </div>
-        <div class="section-content">
-          <h1>课程介绍</h1>
-          <p>介绍大篇幅文字介绍大篇幅文字介绍大篇幅文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+          <!-- <h1>课程介绍</h1> -->
+          <p>{{schoolexCell.detail}}</p>
         </div>
       </div>
     </section>
@@ -36,15 +32,16 @@
         </div>
       </div>
       <ul class="list-item-container">
-        <li class="class-list-item">
+        <li v-if="schoolexCell.teacher_ref.length>0" class="class-list-item">
           <div class="list-left">
             <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-1.png" />
           </div>
           <div class="list-right">
             <div class="right-title">外教</div>
             <div class="right-info first-list">
-              <img class="user-icon" src="../../assets/imgs/App/img_test.png" />
-              <span>Sophie(英国)</span>
+              <img class="user-icon" :src="schoolexCell.teacher_ref[0].portrait" />
+              <span>{{schoolexCell.teacher_ref[0].nationality.first_name}} ({{schoolexCell.teacher_ref[0].nationality.name}})
+              </span>
             </div>
           </div>
         </li>
@@ -69,7 +66,7 @@
           <div class="list-right">
             <div class="right-title">课程地点</div>
             <div class="right-info">
-              <span>东升科技园</span>
+              <span>{{schoolexCell.classroom.keyword}}</span>
             </div>
           </div>
           <div class="list-last">
@@ -120,7 +117,8 @@
         <div class="class-item-container">
           <div class="item-container">
             <div class="item-left">
-              <img src='https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'></div>
+              <img src='https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'>
+            </div>
             <div class="item-middle">
               <div class="item-title-container">欧美幼儿俱乐部</div>
               <div class="item-info-container">
@@ -202,16 +200,37 @@
         <router-link to="due">
           <span class="btn-title">立即预定</span>
         </router-link>
-        <span class="btn-info">已报名9人，还剩1人</span>
+        <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人，
+          还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
       </a>
     </footer>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+import { fmtDate } from '../../utils.js'
 
+export default {
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    ...mapState(['schoolexCell', 'isReady']),
+  },
+  methods: {
+    getClassTimeFormat(time) {
+      return fmtDate(new Date(Date.parse(time)));
+    },
+  },
+  created() {
+    // this.pkid = this.$route.params.id
+    this.$store.dispatch('getSchoolexCellInfo', this.$route.params.id)
+  }
+}
 
 </script>
 <style lang="scss">
-  @import '../../assets/css/classDetail.scss';
-
+@import '../../assets/css/classDetail.scss';
 </style>
