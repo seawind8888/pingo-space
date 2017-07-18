@@ -194,7 +194,7 @@ export default {
   },
   methods: {
     getClassTimeFormat(time) {
-      return fmtDate(new Date(Date.parse(time)));
+      return fmtDate(new Date(Date.parse(time)),1);
     },
     selectStage(stage) {
       this.ageStage = stage

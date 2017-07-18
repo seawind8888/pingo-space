@@ -1,5 +1,10 @@
-exports.fmtDate = (date) => { // author: meizz
-    var fmt = 'yyyy-MM-dd hh:mm'
+exports.fmtDate = (date, type) => { // author: meizz
+    // var fmt = 'yyyy-MM-dd hh:mm'
+    if(type === 1) {
+        var fmt = 'yyyy-MM-dd hh:mm'
+    } else {
+        var fmt = 'MM月dd日 hh:mm'
+    }
     var o = {
         'M+': date.getMonth() + 1, // 月份
         'd+': date.getDate(), // 日
