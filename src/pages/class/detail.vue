@@ -66,7 +66,7 @@
           <div class="list-right">
             <div class="right-title">课程地点</div>
             <div class="right-info">
-              <span>{{schoolexCell.classroom.keyword}}</span>
+              <span>{{schoolexCell.classroom.title | addressFilter(schoolexCell.classroom.title)}}</span>
             </div>
           </div>
           <div class="list-last">
@@ -74,70 +74,70 @@
           </div>
         </li>
         <!-- <li class="class-list-item">
-            <div class="list-left">
-              <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-4.png" />
-            </div>
-            <div class="list-right">
-              <div class="right-title">服务区域</div>
-              <div class="right-info">
-                <span>朝阳区</span>
+              <div class="list-left">
+                <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-4.png" />
               </div>
-            </div>
-            <div class="list-last">
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-            </div>
-          </li>
-          <li class="class-list-item">
-            <div class="list-left">
-              <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-5.png" />
-            </div>
-            <div class="list-right">
-              <div class="right-title">服务方式</div>
-              <div class="right-info">
-                <span>朝阳区</span>
+              <div class="list-right">
+                <div class="right-title">服务区域</div>
+                <div class="right-info">
+                  <span>朝阳区</span>
+                </div>
               </div>
-            </div>
-            <div class="list-last">
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-            </div>
-          </li> -->
+              <div class="list-last">
+                <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              </div>
+            </li>
+            <li class="class-list-item">
+              <div class="list-left">
+                <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-5.png" />
+              </div>
+              <div class="list-right">
+                <div class="right-title">服务方式</div>
+                <div class="right-info">
+                  <span>朝阳区</span>
+                </div>
+              </div>
+              <div class="list-last">
+                <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              </div>
+            </li> -->
       </ul>
     </section>
     <!-- <section>
-        <div class="section-title-container">
-          <div class="title-container">
-            <i class="title-icon"></i> 关联的Club
+          <div class="section-title-container">
+            <div class="title-container">
+              <i class="title-icon"></i> 关联的Club
+            </div>
+            <div class="title-container-right">
+              查看全部
+              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png">
+            </div>
           </div>
-          <div class="title-container-right">
-            查看全部
-            <img src="../../assets/imgs/classDetails/class-list-enter-icon.png">
-          </div>
-        </div>
-        <div class="club-list-container">
-          <div class="class-item-container">
-            <div class="item-container">
-              <div class="item-left">
-                <img src='https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'>
-              </div>
-              <div class="item-middle">
-                <div class="item-title-container">欧美幼儿俱乐部</div>
-                <div class="item-info-container">
-                  时间:&nbsp2017.01.01（周一）10-12点
+          <div class="club-list-container">
+            <div class="class-item-container">
+              <div class="item-container">
+                <div class="item-left">
+                  <img src='https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'>
                 </div>
-                <div class="item-info-container">
-                  地点:&nbsp三里屯soho星巴克咖啡厅
+                <div class="item-middle">
+                  <div class="item-title-container">欧美幼儿俱乐部</div>
+                  <div class="item-info-container">
+                    时间:&nbsp2017.01.01（周一）10-12点
+                  </div>
+                  <div class="item-info-container">
+                    地点:&nbsp三里屯soho星巴克咖啡厅
+                  </div>
+                  <div class="item-info-container">
+                    外教:&nbspTess
+                  </div>
                 </div>
-                <div class="item-info-container">
-                  外教:&nbspTess
+                <div class="item-right">
+                  <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
                 </div>
-              </div>
-              <div class="item-right">
-                <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
               </div>
             </div>
           </div>
-        </div>
-      </section> -->
+        </section> -->
     <section class="last-section">
       <div class="section-title-container">
         <div class="title-container">
@@ -197,7 +197,7 @@
         <img src="../../assets/imgs/classDetails/button-icon-2.png">
       </a>
       <a class="footer-main-btn">
-        <router-link to="due">
+        <router-link to="/due">
           <span class="btn-title">立即预定</span>
         </router-link>
         <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人， 还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
@@ -221,6 +221,13 @@ export default {
   filters: {
     getClassTimeFormat(time) {
       return fmtDate(new Date(Date.parse(time)), 2);
+    },
+    addressFilter(addr) {
+      let site
+      Object.keys(addr).forEach((key) => {
+          site = addr['zh-hans']
+      })
+      return site
     }
   },
   methods: {

@@ -35,6 +35,7 @@ export function getSchoolexCellInfo({
   commit,
   state
 }, id) {
+  state.isReady = false
   return fetchCellSchoolex(token, id)
     .then((res) => {
       commit('FETCH_SCHOOLEX_CELL_FINISH', res.data)
