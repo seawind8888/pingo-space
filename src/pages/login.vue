@@ -31,6 +31,7 @@ export default {
     signIn() {
       var self = this
       let baseURL = process.env === 'production' ? 'http://staging.pingospace.com' : ''
+      // let baseURL = 'http://staging.pingospace.com'
       axios({
         method: 'post',
         // url: '/api/auth/login',

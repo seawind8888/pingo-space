@@ -2,8 +2,9 @@
   <div class="all-list-container">
     <ul>
       <li :key="item.pk" v-for="item in schoolex">
-        <router-link to="detail" class="class-list-container">
-          <class-item item-url="{path: '/detail'}" :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+        <router-link :to="'/detail/'+item.pk"  class="class-list-container">
+           <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                </router-link>
         </router-link>
       </li>
     </ul>

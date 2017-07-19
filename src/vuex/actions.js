@@ -1,7 +1,9 @@
 import {
   fetchLearnex,
   fetchSchoolex,
-  fetchCellSchoolex
+  fetchCellSchoolex,
+  fetchEnrollmentsInfo,
+  fetchUserInfo
 } from './fetch.js'
 //判断访客模式
 let token = window.localStorage.token || ''
