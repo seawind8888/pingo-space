@@ -115,7 +115,7 @@
             <ul>
               <li :key="item.pk" v-for="item in schoolex">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -130,7 +130,7 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,4,5)">
                 <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -145,7 +145,7 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,6,8)">
                 <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -160,7 +160,7 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,9,12)">
                 <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="item.classroom.detail" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -195,6 +195,13 @@ export default {
   methods: {
     getClassTimeFormat(time) {
       return fmtDate(new Date(Date.parse(time)), 1);
+    },
+    addressFilter(addr) {
+      let site
+      Object.keys(addr).forEach((key) => {
+          site = addr['zh-hans']
+      })
+      return site
     },
     selectStage(stage) {
       this.ageStage = stage

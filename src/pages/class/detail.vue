@@ -148,7 +148,7 @@
           <img src="../../assets/imgs/classDetails/class-list-enter-icon.png">
         </div>
       </div>
-      <ul class="evaluate-list-container">
+      <!-- <ul class="evaluate-list-container">
         <li class="evaluate-list-item">
           <div class="list-left">
             <img src="../../assets/imgs/App/img_test.png">
@@ -187,7 +187,7 @@
             <div class="reply-info">此处是评价文字文字评价评价评价</div>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </section>
     <footer class="detail-footer-button">
       <a class="icon-btn-one">
