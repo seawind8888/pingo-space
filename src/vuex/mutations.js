@@ -19,14 +19,24 @@ export function FETCH_SCHOOLEX_FINISH(state, [schoolex]) {
 }
 
 export function FETCH_SCHOOLEX_SELECT(state) {
-//   state.schoolexSelect.push(state.schoolexBox[0])
-  state.schoolexSelectBox = [...state.schoolexBox]
-  for (let i = 0; i < state.schoolexBox.length; i++) {
-    for (let j = 0; j < state.schoolexSelectBox.length; j++) {
-      if (state.schoolexSelectBox[j].begin === state.schoolexBox[i].begin) {
-        state.schoolexSelectBox[j].class.concat(state.schoolexBox.shift(state.schoolexBox[i].class))
+  //   state.schoolexSelect.push(state.schoolexBox[0])
+  //   state.schoolexSelectBox = [...state.schoolexBox]
+  //   for (let i = 0; i < state.schoolexBox.length; i++) {
+  //     for (let j = 0; j < state.schoolexSelectBox.length; j++) {
+  //       if (state.schoolexSelectBox[j].begin === state.schoolexBox[i].begin) {
+  //         state.schoolexSelectBox[j].class.concat(state.schoolexBox.shift(state.schoolexBox[i].class))
+  //       } else {
+  //           state.schoolexSelectBox.push(state.schoolexBox[i])
+  //       }
+  //     }
+  //   }
+  state.schoolexSelectBox.push(state.schoolexBox[0])
+  for (let i = 0; i < state.choolexSelectBox.length; i++) {
+    for (let j = 1; j < state.schoolexBox.length; j++) {
+      if (state.schoolexSelectBox[i].begin === state.schoolexBox[j].begin) {
+        state.schoolexSelectBox[i].class.push(state.schoolexBox[i].class)
       } else {
-          state.schoolexSelectBox.push(state.schoolexBox[i])
+        state.schoolexSelectBox.push(state.schoolexBox[i])
       }
     }
   }
