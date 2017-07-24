@@ -3,43 +3,30 @@ export function FETCH_LEARNEX_FINISH(state, learnex) {
 }
 
 export function FETCH_SCHOOLEX_FINISH(state, [schoolex]) {
-  schoolex.forEach((e) => {
+  let classDateBox = []
+
+  schoolex.forEach((e, i) => {
     let classItem = {
       begin: '',
       class: []
     }
-    classItem.begin = e.teaching_begin.slice(0, 10)
-    classItem.class.push(e)
-    state.schoolexBox.push(classItem)
-    // let dateEnd = dateBegin + 86400000 - 1000
-
+    let classDate = e.teaching_begin.slice(0, 10)
+    if (classDateBox.indexOf(classDate) == -1) {
+      classDateBox.push(classDate)
+      classItem.begin = classDate
+      classItem.class.push(e)
+      state.schoolexDateBox.push(classItem)
+    } else {
+      state.schoolexDateBox.forEach((l) => {
+        if (l.begin == classDate) {
+          l.class.push(e)
+        }
+      })
+    }
   })
+
   state.schoolex = schoolex
   state.isReady = true
-}
-
-export function FETCH_SCHOOLEX_SELECT(state) {
-  //   state.schoolexSelect.push(state.schoolexBox[0])
-  //   state.schoolexSelectBox = [...state.schoolexBox]
-  //   for (let i = 0; i < state.schoolexBox.length; i++) {
-  //     for (let j = 0; j < state.schoolexSelectBox.length; j++) {
-  //       if (state.schoolexSelectBox[j].begin === state.schoolexBox[i].begin) {
-  //         state.schoolexSelectBox[j].class.concat(state.schoolexBox.shift(state.schoolexBox[i].class))
-  //       } else {
-  //           state.schoolexSelectBox.push(state.schoolexBox[i])
-  //       }
-  //     }
-  //   }
-  state.schoolexSelectBox.push(state.schoolexBox[0])
-  for (let i = 0; i < state.choolexSelectBox.length; i++) {
-    for (let j = 1; j < state.schoolexBox.length; j++) {
-      if (state.schoolexSelectBox[i].begin === state.schoolexBox[j].begin) {
-        state.schoolexSelectBox[i].class.push(state.schoolexBox[i].class)
-      } else {
-        state.schoolexSelectBox.push(state.schoolexBox[i])
-      }
-    }
-  }
 }
 
 export function FETCH_SCHOOLEX_CELL_FINISH(state, schoolexCell) {

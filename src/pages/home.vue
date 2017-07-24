@@ -82,7 +82,8 @@
         </div>
         <div class="have-choose-class">
           <router-link to="/detail" class="class-list-container">
-            <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
+            <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'"
+              :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
           </router-link>
         </div>
       </section>
@@ -104,18 +105,19 @@
           <div @click="selectStage('middle')" :class="ageStage=='middle'?'item-on':''" class="tab-item">6-8岁</div>
           <div @click="selectStage('high')" :class="ageStage=='high'?'item-on':''" class="tab-item">9-12岁</div>
         </div>
-        <div v-show="ageStage=='all'">
-          <!--<div class="class-time-container">
-                                    <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六)
-                                  </div>-->
+        <div v-show="ageStage=='all'" :key="dateItem.begin" v-for="dateItem in schoolexDateBox">
+          <div class="class-time-container">
+            <!-- <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六) -->
+            <img src="../assets/imgs/App/time-icon.png" /> {{dateItem.begin}}
+          </div>
           <div class="class-part-container">
-            <!--<router-link to="detail" class="class-list-container">
-                            <class-item item-url="{path: '/detail'}" :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
-                          </router-link>-->
             <ul>
-              <li :key="item.pk" v-for="item in schoolex">
+              <li :key="item.pk" v-for="item in dateItem.class">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -129,8 +131,11 @@
           <div class="class-part-container">
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,4,5)">
-                <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                <router-link :to="'/detail/'+item.pk" class="class-list-container">
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -144,8 +149,11 @@
           <div class="class-part-container">
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,6,8)">
-                <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                <router-link :to="'/detail/'+item.pk" class="class-list-container">
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -159,8 +167,11 @@
           <div class="class-part-container">
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,9,12)">
-                <router-link :to="'/detail/'+item.pk"  class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                <router-link :to="'/detail/'+item.pk" class="class-list-container">
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -176,59 +187,64 @@
 </template>
 
 <script>
-import classItem from '../components/classItem'
-import { mapState } from 'vuex'
-import { fmtDate } from '../utils.js'
-export default {
-  data() {
-    return {
-      ageStage: 'all',
-      emptyFilter: 0
-    }
-  },
-  computed: {
-    ...mapState(['learnex', 'schoolex', 'isReady', 'enrollments']),
-  },
-  components: {
-    classItem
-  },
-  methods: {
-    getClassTimeFormat(time) {
-      return fmtDate(new Date(Date.parse(time)), 1);
+  import classItem from '../components/classItem'
+  import {
+    mapState
+  } from 'vuex'
+  import {
+    fmtDate
+  } from '../utils.js'
+  export default {
+    data() {
+      return {
+        ageStage: 'all',
+        emptyFilter: 0
+      }
     },
-    addressFilter(addr) {
-      let site
-      Object.keys(addr).forEach((key) => {
+    computed: {
+      ...mapState(['learnex', 'schoolex', 'isReady', 'enrollments', 'schoolexDateBox']),
+    },
+    components: {
+      classItem
+    },
+    methods: {
+      getClassTimeFormat(time) {
+        return fmtDate(new Date(Date.parse(time)), 1);
+      },
+      addressFilter(addr) {
+        let site
+        Object.keys(addr).forEach((key) => {
           site = addr['zh-hans']
-      })
-      return site
+        })
+        return site
+      },
+      selectStage(stage) {
+        this.ageStage = stage
+      },
+      ageStageFilter(items, minAge, maxAge) {
+        var self = this
+        return items.filter((item, index) => {
+          let itemFilter = item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
+          let filterCount = 0
+          if (itemFilter) {
+            self.emptyFilter = filterCount++
+          }
+          return itemFilter
+        })
+      }
     },
-    selectStage(stage) {
-      this.ageStage = stage
-    },
-    ageStageFilter(items, minAge, maxAge) {
-      var self = this
-      return items.filter((item, index) => {
-        let itemFilter = item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
-        let filterCount = 0
-        if (itemFilter) {
-          self.emptyFilter = filterCount++
-        }
-        return itemFilter
-      })
-    }
-  },
-  created() {
-    this.$store.dispatch('getHomeInfo')
-    if (localStorage.pk) {
-      this.$store.dispatch('getUserInfo', localStorage.pk)
-      this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
+    created() {
+      this.$store.dispatch('getHomeInfo')
+      if (localStorage.pk) {
+        this.$store.dispatch('getUserInfo', localStorage.pk)
+        this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
+      }
     }
   }
-}
 
 </script>
 
 <style lang="scss">
-@import '../assets/css/clubIndex.scss';
+  @import '../assets/css/clubIndex.scss';
+
 </style>

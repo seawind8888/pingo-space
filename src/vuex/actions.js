@@ -29,8 +29,6 @@ export function getSchoolexInfo({
   return fetchSchoolex(token, state.learn)
     .then((res) => {
       commit('FETCH_SCHOOLEX_FINISH', [res.data])
-    }).then(() => {
-      commit('FETCH_SCHOOLEX_SELECT')
     })
 }
 
