@@ -12,6 +12,8 @@ const store = new Vuex.Store({
         learnex: '',
         learn: '',
         schoolex: '',
+        schoolexBox: [],
+        schoolexSelectBox: [],
         schoolexCell: '',
         enrollments: '',
         user: '',
