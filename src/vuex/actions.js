@@ -5,14 +5,14 @@ import {
   fetchEnrollmentsInfo,
   fetchUserInfo
 } from './fetch.js'
-//判断访客模式
-let token = window.localStorage.token || ''
 
 // 获取俱乐部信息
 export function getLearnexInfo({
   commit,
   state
 }) {
+  //判断访客模式
+let token = window.localStorage.token || ''
   return fetchLearnex(token)
     .then((res) => {
       //传入俱乐部pkid
@@ -26,6 +26,8 @@ export function getSchoolexInfo({
   commit,
   state
 }) {
+  //判断访客模式
+let token = window.localStorage.token || ''
   return fetchSchoolex(token, state.learn)
     .then((res) => {
       commit('FETCH_SCHOOLEX_FINISH', [res.data])
@@ -37,6 +39,7 @@ export function getSchoolexCellInfo({
   commit,
   state
 }, id) {
+  let token = window.localStorage.token || ''
   state.isReady = false
   return fetchCellSchoolex(token, id)
     .then((res) => {
@@ -49,6 +52,7 @@ export function getEnrollmentsInfo({
   commit,
   state
 }, pk) {
+  let token = window.localStorage.token || ''
   return fetchEnrollmentsInfo(token, pk)
     .then((res) => {
       commit('FETCH_ENROLLMENTS_FINISH', [res.data])
@@ -60,6 +64,7 @@ export function getUserInfo({
   commit,
   state
 }, pk) {
+  let token = window.localStorage.token || ''
   return fetchUserInfo(token, pk)
     .then((res) => {
       commit('FETCH_USER_FINISH', [res.data])
@@ -70,6 +75,6 @@ export function getUserInfo({
 export async function getHomeInfo({
   dispatch
 }) {
-  await dispatch('getLearnexInfo',token)
-  await dispatch('getSchoolexInfo',token)
+  await dispatch('getLearnexInfo')
+  await dispatch('getSchoolexInfo')
 }

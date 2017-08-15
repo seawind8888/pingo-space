@@ -3,9 +3,10 @@ export function FETCH_LEARNEX_FINISH(state, learnex) {
 }
 
 export function FETCH_SCHOOLEX_FINISH(state, [schoolex]) {
-  let classDateBox = []
+  
 
   schoolex.forEach((e, i) => {
+    let classDateBox = []
     let classItem = {
       begin: '',
       class: []
