@@ -11,6 +11,7 @@ const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
 const classDetail = r => require.ensure([], () => r(require('./pages/class/detail')))
 const classDue = r => require.ensure([], () => r(require('./pages/class/due')))
 const classAddress = r => require.ensure([], () => r(require('./pages/class/classAddress')))
+const classSchedule = r => require.ensure([], () => r(require('./pages/class/classSchedule')))
 const addrDetail = r => require.ensure([], () => r(require('./pages/class/addressDetail')))
 
 export default [
@@ -41,6 +42,10 @@ export default [
   {
     path: '/home',
     component: home
+  },
+  {
+    path: '/schedule',
+    component: classSchedule
   },
   {
     path: '/all',

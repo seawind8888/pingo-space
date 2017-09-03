@@ -1,6 +1,6 @@
 <template>
   <div v-if="isReady" class="index-container">
-    <header class="index-header">
+    <!-- <header class="index-header">
       <img class="header-back" src="../assets/imgs/App/iStock_000045462236_Full@2x.png">
       <div class="index-header-container">
         <div class="header-title-container">
@@ -48,27 +48,46 @@
           <div class="vip-info-container">季度会员</div>
         </div>
       </div>
+    </header> -->
+    <header class="index-header">
+      <img style="position:relative" src="../assets/imgs/banner-img.png">
     </header>
     <div class="main">
       <section class="tab-bar-container">
         <div class="tab-item">
           <img class="tab-icon" src="../assets/imgs/App/tab1.png">
-          <p>详细介绍</p>
+          <p>周末班</p>
         </div>
         <div class="tab-item">
           <img class="tab-icon" src="../assets/imgs/App/tab2.png">
-          <p>往期回顾</p>
+          <p>节假日班</p>
         </div>
         <div class="tab-item">
           <img class="tab-icon" src="../assets/imgs/App/tab3.png">
-          <p>活动动态</p>
+          <p>寒暑假班</p>
         </div>
         <div class="tab-item">
           <img class="tab-icon" src="../assets/imgs/App/tab4.png">
-          <p>报名续费</p>
+          <p>VIP上门</p>
         </div>
       </section>
-      <section v-if="enrollments.length>0" class="choose-class-container">
+      <section class="choose-class-container">
+        <div class="section-title-container">
+          <div class="title-container-left">
+            <i class="title-icon"></i> 我的课程
+          </div>
+        </div>
+        <router-link to="/schedule">
+          <div class="choose-class-main-container">
+            <img src="../assets/imgs/App/class-back-img.png"></img>
+            <div class="class-section-info-container">
+              <p class="class-section-info-left">上课时间：2017.09.24</p>
+              <p class="class-section-info-right">火星班火星班火星班火星班火星班火星班火</p>
+            </div>
+          </div>
+        </router-link>
+      </section>
+      <!-- <section v-if="enrollments.length>0" class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
             <i class="title-icon"></i> 已选课程
@@ -85,8 +104,8 @@
             <class-item :item-cover="'https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'" :item-title="'创意绘画艺术启蒙'" :item-time="'2017-03-11 14：00'" :item-address="'北京市朝阳区798尤伦斯达瓦达瓦达瓦大'" :user-portrait="'https://ooo.0o0.ooo/2017/04/08/58e8b3ccc3371.png'"></class-item>
           </router-link>
         </div>
-      </section>
-      <section class="choose-class-container">
+      </section> -->
+      <!-- <section class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
             <i class="title-icon"></i> 可选课程
@@ -106,7 +125,6 @@
         </div>
         <div v-show="ageStage=='all'" :key="dateItem.begin" v-for="dateItem in schoolexDateBox">
           <div class="class-time-container">
-            <!-- <img src="../assets/imgs/App/time-icon.png" /> 03月11日&nbsp(周六) -->
             <img src="../assets/imgs/App/time-icon.png" /> {{dateItem.begin}}
           </div>
           <div class="class-part-container">
@@ -168,69 +186,73 @@
             <div class="block-info">小编正在努力排课中...</div>
           </div>
         </div>
-      </section>
+      </section> -->
     </div>
   </div>
 </template>
 
 <script>
-import classItem from '../components/classItem'
-import {
-  mapState
-} from 'vuex'
-import {
-  fmtDate
-} from '../utils.js'
-export default {
-  data() {
-    return {
-      ageStage: 'all',
-      emptyFilter: 0
-    }
-  },
-  computed: {
-    ...mapState(['learnex', 'schoolex', 'isReady', 'enrollments', 'schoolexDateBox']),
-  },
-  components: {
-    classItem
-  },
-  methods: {
-    getClassTimeFormat(time) {
-      return fmtDate(new Date(Date.parse(time)), 1);
+  import classItem from '../components/classItem'
+  import {
+    Swiper
+  } from 'vux'
+  import {
+    mapState
+  } from 'vuex'
+  import {
+    fmtDate
+  } from '../utils.js'
+  export default {
+    data() {
+      return {
+        ageStage: 'all',
+        emptyFilter: 0
+      }
     },
-    addressFilter(addr) {
-      let site
-      Object.keys(addr).forEach((key) => {
-        site = addr['zh-hans']
-      })
-      return site
+    computed: {
+      ...mapState(['learnex', 'schoolex', 'isReady', 'enrollments', 'schoolexDateBox']),
     },
-    selectStage(stage) {
-      this.ageStage = stage
+    components: {
+      classItem
     },
-    ageStageFilter(items, minAge, maxAge) {
-      var self = this
-      return items.filter((item, index) => {
-        let itemFilter = item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
-        let filterCount = 0
-        if (itemFilter) {
-          self.emptyFilter = filterCount++
-        }
-        return itemFilter
-      })
-    }
-  },
-  mounted() {
-    this.$store.dispatch('getHomeInfo')
-    if (localStorage.token) {
-      this.$store.dispatch('getUserInfo', localStorage.pk)
-      this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
+    methods: {
+      getClassTimeFormat(time) {
+        return fmtDate(new Date(Date.parse(time)), 1);
+      },
+      addressFilter(addr) {
+        let site
+        Object.keys(addr).forEach((key) => {
+          site = addr['zh-hans']
+        })
+        return site
+      },
+      selectStage(stage) {
+        this.ageStage = stage
+      },
+      ageStageFilter(items, minAge, maxAge) {
+        var self = this
+        return items.filter((item, index) => {
+          let itemFilter = item.crowd.min_age >= minAge && item.crowd.max_age <= maxAge
+          let filterCount = 0
+          if (itemFilter) {
+            self.emptyFilter = filterCount++
+          }
+          return itemFilter
+        })
+      }
+    },
+    mounted() {
+      this.$store.dispatch('getHomeInfo')
+      if (localStorage.token) {
+        this.$store.dispatch('getUserInfo', localStorage.pk)
+        this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
+      }
     }
   }
-}
 
 </script>
 
 <style lang="scss">
-@import '../assets/css/clubIndex.scss';
+  @import '../assets/css/clubIndex.scss';
+
 </style>
