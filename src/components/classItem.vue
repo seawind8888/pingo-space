@@ -7,13 +7,13 @@
       <div class="item-middle">
         <div class="item-title-container">{{itemTitle}}</div>
         <div class="item-info-container">
-          通用年龄:{{itemAgeMin}}-{{itemAgeMax}}岁
+          通用年龄: {{itemAgeMin}}-{{itemAgeMax}}岁
         </div>
         <div class="item-info-container">
-          时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp间: {{itemTime}}
+          时&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp间: {{itemTime}}
         </div>
         <div class="item-info-container">
-          地&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp点: {{itemAddress}}
+          地&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp点: {{itemAddress}}
         </div>
       </div>
       <div class="item-right">
