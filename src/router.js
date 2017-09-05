@@ -9,10 +9,11 @@ const passModify = r => require.ensure([], () => r(require('./pages/pass/modify'
 const home = r => require.ensure([], () => r(require('./pages/home')))
 const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
 const classDetail = r => require.ensure([], () => r(require('./pages/class/detail')))
+const vipClassDetail = r => require.ensure([], () => r(require('./pages/class/vip-detail')))
 const classDue = r => require.ensure([], () => r(require('./pages/class/due')))
-const classAddress = r => require.ensure([], () => r(require('./pages/class/classAddress')))
-const classSchedule = r => require.ensure([], () => r(require('./pages/class/classSchedule')))
-const addrDetail = r => require.ensure([], () => r(require('./pages/class/addressDetail')))
+const classAddress = r => require.ensure([], () => r(require('./pages/class/address')))
+const classSchedule = r => require.ensure([], () => r(require('./pages/class/schedule')))
+const addrDetail = r => require.ensure([], () => r(require('./pages/class/address-detail')))
 
 export default [
   {
@@ -32,11 +33,11 @@ export default [
     component: regist
   },
   {
-    path: '/passForgot',
+    path: '/pass-forgot',
     component: passForgot
   },
   {
-    path: '/passModify',
+    path: '/pass-modify',
     component: passModify
   },
   {
@@ -56,6 +57,10 @@ export default [
     component: classDetail
   },
   {
+    path: '/vip-detail',
+    component: vipClassDetail
+  },
+  {
     path: '/due',
     component: classDue
   },
@@ -64,7 +69,7 @@ export default [
     component: classAddress
   },
   {
-    path: '/addrDetail',
+    path: '/addr-detail',
     component: addrDetail
   }
 ]
