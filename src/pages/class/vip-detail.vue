@@ -17,9 +17,45 @@
       <ul>
         <li class="vip-list-item">
           <div class="vip-class-left">
-            <img src="../../assets/imgs/vip-class-detail/detail_icon_course@2x.png"></img>
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_course@2x.png" />
+            <p>课 程</p>
           </div>
-          <div class="vip-class-right"></div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>美国篮球文化节文化节文化节美国篮球文化节文化节</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
+            <p>时 间</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>12月25日14:00-16:00</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
+            <p>地 点</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>东升科技园</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
         </li>
       </ul>
     </section>
