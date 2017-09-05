@@ -147,5 +147,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../assets/css/entryPages.scss';
+@import '../assets/css/entry-pages.scss';
 </style>

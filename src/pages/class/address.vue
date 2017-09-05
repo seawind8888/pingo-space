@@ -42,6 +42,6 @@
 
 </script>
 <style lang="scss">
-  @import '../../assets/css/classAddress.scss';
+  @import '../../assets/css/class-address.scss';
 
 </style>

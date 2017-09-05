@@ -113,5 +113,5 @@ export default {
 
 </script>
 <style lang="scss">
-@import '../../assets/css/classDue.scss';
+@import '../../assets/css/class-due.scss';
 </style>

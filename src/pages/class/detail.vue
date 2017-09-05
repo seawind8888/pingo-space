@@ -241,5 +241,5 @@ export default {
 
 </script>
 <style lang="scss">
-@import '../../assets/css/classDetail.scss';
+@import '../../assets/css/class-detail.scss';
 </style>

@@ -25,6 +25,6 @@
 
 </script>
 <style lang="scss">
-  @import '../../assets/css/addressDetail.scss';
+  @import '../../assets/css/address-detail.scss';
 
 </style>

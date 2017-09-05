@@ -33,5 +33,5 @@ export default {
 
 </script>
 <style lang="scss">
-@import '../../assets/css/classAll.scss';
+@import '../../assets/css/class-all.scss';
 </style>
