@@ -25,13 +25,13 @@
               <p>美国篮球文化节文化节文化节美国篮球文化节文化节</p>
             </div>
             <div class="vip-last-icon-container">
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
         </li>
         <li class="vip-list-item">
           <div class="vip-class-left">
-            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
+            <img style="height:15px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
             <p>时 间</p>
           </div>
           <div class="vip-class-right">
@@ -39,13 +39,13 @@
               <p>12月25日14:00-16:00</p>
             </div>
             <div class="vip-last-icon-container">
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
         </li>
         <li class="vip-list-item">
           <div class="vip-class-left">
-            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
+            <img style="height:19px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_location@2x.png" />
             <p>地 点</p>
           </div>
           <div class="vip-class-right">
@@ -53,7 +53,69 @@
               <p>东升科技园</p>
             </div>
             <div class="vip-last-icon-container">
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_teacher@2x.png" />
+            <p>外 教</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+              </div>
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+              </div>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_students@2x.png" />
+            <p>学 员</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <div class="student-list-container">
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
+                </div>
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
+                </div>
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
+                </div>
+              </div>
+              <div class="student-total-info">
+                99/99
+              </div>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img style="width:13px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_ta@2x.png" />
+            <p>助 教</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p></p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
         </li>
