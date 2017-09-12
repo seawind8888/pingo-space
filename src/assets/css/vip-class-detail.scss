@@ -50,6 +50,11 @@
     &:nth-of-type(1) {
       margin-top: 0
     }
+    &:nth-last-of-type(1) {
+      .vip-class-right {
+        border-bottom-width: 0
+      }
+    }
   }
   .vip-class-left {
     display: flex;
@@ -60,8 +65,8 @@
     .vip-item-icon {
       width: 15px;
       height: 17px;
-			margin-right: 12px;
-			padding-top: 2px;
+      margin-right: 12px;
+      padding-top: 2px;
     }
   }
   .vip-class-right {
@@ -71,27 +76,45 @@
     margin-left: 20px;
     border-bottom: 1px solid #f3f3f4;
     padding-bottom: 25px;
-    .vip-class-right-container {
-			flex:1;
-			display: flex;
-			flex-direction: row;
-      p {
-        margin-top: 0;
-        text-align: left
+  }
+  .vip-class-right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    p {
+      margin-top: 0;
+      text-align: left
+    }
+  }
+  .assistant-info {
+    display: flex;
+    flex-direction: column;
+    .right-info-container {
+      justify-content: flex-start;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .assistant-call-container {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      .call-img {
+        width: 20px;
+        height: 20px;
       }
     }
   }
-  .right-info-container{
+  .right-info-container {
     display: flex;
     align-items: center;
-		justify-content: center;
-		flex:1
+    justify-content: center;
+    margin-right: 20px;
   }
   .right-info-avatar {
     width: 25px;
     height: 25px;
-		border-radius: 9999px;
-		margin-right: 10px;
+    border-radius: 9999px;
+    margin-right: 10px;
   }
   .vip-last-icon-container {
     margin-left: 22px;
@@ -99,16 +122,40 @@
       width: 6px;
       height: 10px;
     }
-	}
-	.student-list-container {
-		flex:1;
-		display: flex;
-		flex-direction: row;
-	}
-	.student-avatar-container {
-		width: 9%;
-		.right-info-avatar {
-			margin-right: 0;			
-		}
-	}
+  }
+  .student-list-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  .student-avatar-container {
+    width: 9%;
+    .right-info-avatar {
+      margin-right: 0;
+    }
+  }
+}
+
+.vip-footer-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #c0c0c6;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 4px;
+  span {
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    line-height: 150%;
+  }
+  .btn-title {
+    font-size: 1.7rem;
+  }
+  .btn-info {
+    font-size: 1rem;
+  }
 }

@@ -73,9 +73,6 @@
                 <span>Sophie</span>
               </div>
             </div>
-            <div class="vip-last-icon-container">
-              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-            </div>
           </div>
         </li>
         <li class="vip-list-item">
@@ -111,16 +108,30 @@
             <p>助 教</p>
           </div>
           <div class="vip-class-right">
-            <div class="vip-class-right-container">
-              <p></p>
-            </div>
-            <div class="vip-last-icon-container">
-              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            <div class="vip-class-right-container assistant-info">
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+                <div class="assistant-call-container">
+                  <img class="call-img" src="../../assets/imgs/vip-class-detail/detail_icon_phonecall@2x.png"></img>
+                </div>
+              </div>
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+                <div class="assistant-call-container">
+                  <img class="call-img" src="../../assets/imgs/vip-class-detail/detail_icon_phonecall@2x.png"></img>
+                </div>
+              </div>
             </div>
           </div>
         </li>
       </ul>
     </section>
+    <footer class="vip-footer-btn">
+      <span class="btn-title">去评论</span>
+      <span class="btn-info">完成后发表一下自己的感受吧~</span>
+    </footer>
   </div>
 </template>
 
