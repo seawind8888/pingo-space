@@ -57,7 +57,7 @@ export default [
     component: classDetail
   },
   {
-    path: '/vip-detail',
+    path: '/vip-detail/:id',
     component: vipClassDetail
   },
   {
