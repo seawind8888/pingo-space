@@ -7,6 +7,7 @@ const passForgot = r => require.ensure([], () => r(require('./pages/pass/forgot'
 const passModify = r => require.ensure([], () => r(require('./pages/pass/modify')))
 
 const home = r => require.ensure([], () => r(require('./pages/home')))
+const club = r => require.ensure([], () => r(require('./pages/club')))
 const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
 const classDetail = r => require.ensure([], () => r(require('./pages/class/detail')))
 const vipClassDetail = r => require.ensure([], () => r(require('./pages/class/vip-detail')))
@@ -42,6 +43,10 @@ export default [
   },
   {
     path: '/home',
+    component: home
+  },
+  {
+    path: '/club',
     component: home
   },
   {
