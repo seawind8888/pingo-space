@@ -50,7 +50,8 @@
       </div>
     </header> -->
     <header class="index-header">
-      <img style="position:relative" src="../assets/imgs/banner-img.png">
+      <swiper :list="imgList" auto style="width:100%;margin:0 auto;" height="230px" dots-class="custom-bottom" dots-position="center"></swiper>
+      <!-- <img style="position:relative" src="../assets/imgs/banner-img.png"> -->
     </header>
     <div class="main">
       <section class="tab-bar-container">
@@ -74,6 +75,30 @@
       <section class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
+            <i class="title-icon"></i> 近期课程
+          </div>
+        </div>
+        <div :key="dateItem.begin" v-for="dateItem in schoolexDateBox">
+          <div class="class-time-container">
+            <img src="../assets/imgs/App/time-icon.png" /> {{dateItem.begin}}
+          </div>
+          <div class="class-part-container">
+            <ul>
+              <li :key="item.pk" v-for="item in dateItem.class">
+                <router-link :to="'/detail/'+item.pk" class="class-list-container">
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="choose-class-container">
+        <div class="section-title-container">
+          <div class="title-container-left">
             <i class="title-icon"></i> 我的课程
           </div>
         </div>
@@ -86,7 +111,7 @@
             </div>
           </div>
         </router-link>
-      </section>
+      </section> -->
       <!-- <section v-if="enrollments.length>0" class="choose-class-container">
         <div class="section-title-container">
           <div class="title-container-left">
@@ -131,7 +156,10 @@
             <ul>
               <li :key="item.pk" v-for="item in dateItem.class">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -146,7 +174,10 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,4,5)">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -161,7 +192,10 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,6,8)">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -176,7 +210,10 @@
             <ul>
               <li :key="item.pk" v-for="item in ageStageFilter(schoolex,9,12)">
                 <router-link :to="'/detail/'+item.pk" class="class-list-container">
-                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age" :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)" :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans" :user-portrait="item.assistant_ref"></class-item>
+                  <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
+                    :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
+                    :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
+                    :user-portrait="item.assistant_ref"></class-item>
                 </router-link>
               </li>
             </ul>
@@ -206,14 +243,29 @@
     data() {
       return {
         ageStage: 'all',
-        emptyFilter: 0
+        emptyFilter: 0,
+        imgList: [{
+            url: 'javascript:;',
+            img: 'https://i.loli.net/2017/09/13/59b8dd71637e0.png'
+          },
+          {
+            url: 'javascript:;',
+            img: 'https://i.loli.net/2017/09/13/59b8dd71637e0.png'
+          },
+          {
+            url: 'javascript:;',
+            img: 'https://i.loli.net/2017/09/13/59b8dd71637e0.png'
+          }
+
+        ]
       }
     },
     computed: {
       ...mapState(['learnex', 'schoolex', 'isReady', 'enrollments', 'schoolexDateBox']),
     },
     components: {
-      classItem
+      classItem,
+      Swiper
     },
     methods: {
       getClassTimeFormat(time) {
