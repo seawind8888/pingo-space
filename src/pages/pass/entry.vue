@@ -1,8 +1,8 @@
 <template>
   <div class="enter-container">
-    <img style="width: 100%" class="enter-back-img" src="../assets/imgs/enter.png">
+    <img style="width: 100%" class="enter-back-img" src="../../assets/imgs/enter.png">
     <div class="quick-start">
-      <img src="../assets/imgs/quick-start.png">
+      <img src="../../assets/imgs/quick-start.png">
     </div>
     <div class="btn-container">
       <router-link class="enter-btn" to='/login'>
@@ -30,5 +30,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../assets/css/entry-pages.scss';
+@import '../../assets/css/entry-pages.scss';
 </style>

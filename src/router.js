@@ -1,13 +1,14 @@
 import App from './App'
 
-const entry = r => require.ensure([], () => r(require('./pages/entry')))
-const login = r => require.ensure([], () => r(require('./pages/login')))
-const regist = r => require.ensure([], () => r(require('./pages/regist')))
+const entry = r => require.ensure([], () => r(require('./pages/pass/entry')))
+const login = r => require.ensure([], () => r(require('./pages/pass/login')))
+const regist = r => require.ensure([], () => r(require('./pages/pass/regist')))
 const passForgot = r => require.ensure([], () => r(require('./pages/pass/forgot')))
 const passModify = r => require.ensure([], () => r(require('./pages/pass/modify')))
 
 const home = r => require.ensure([], () => r(require('./pages/home')))
-const club = r => require.ensure([], () => r(require('./pages/club')))
+const clubJoin = r => require.ensure([], () => r(require('./pages/club/join')))
+const clubDetail = r => require.ensure([], () => r(require('./pages/club/detail')))
 const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
 const classDetail = r => require.ensure([], () => r(require('./pages/class/detail')))
 const vipClassDetail = r => require.ensure([], () => r(require('./pages/class/vip-detail')))
@@ -46,8 +47,12 @@ export default [
     component: home
   },
   {
-    path: '/club',
-    component: home
+    path: '/club-join',
+    component: clubJoin
+  },
+  {
+    path: '/club-detail',
+    component: clubDetail
   },
   {
     path: '/schedule',
