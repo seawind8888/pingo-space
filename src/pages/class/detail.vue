@@ -190,6 +190,14 @@
       </ul> -->
     </section>
     <footer class="detail-footer-button">
+      <a class="footer-main-btn">
+        <router-link to="/club">
+          <span class="btn-title">立即预定</span>
+        </router-link>
+        <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人， 还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
+      </a>
+    </footer>
+    <!-- <footer class="detail-footer-button">
       <a class="icon-btn-one">
         <img src="../../assets/imgs/classDetails/button-icon-1.png">
       </a>
@@ -202,7 +210,7 @@
         </router-link>
         <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人， 还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
       </a>
-    </footer>
+    </footer> -->
   </div>
 </template>
 <script>

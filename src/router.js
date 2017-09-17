@@ -1,12 +1,12 @@
 import App from './App'
 
-const entry = r => require.ensure([], () => r(require('./pages/pass/entry')))
-const login = r => require.ensure([], () => r(require('./pages/pass/login')))
-const regist = r => require.ensure([], () => r(require('./pages/pass/regist')))
+const entry = r => require.ensure([], () => r(require('./pages/entry')))
+const login = r => require.ensure([], () => r(require('./pages/login')))
+const regist = r => require.ensure([], () => r(require('./pages/regist')))
 const passForgot = r => require.ensure([], () => r(require('./pages/pass/forgot')))
 const passModify = r => require.ensure([], () => r(require('./pages/pass/modify')))
-
 const home = r => require.ensure([], () => r(require('./pages/home')))
+const club = r => require.ensure([], () => r(require('./pages/club/club')))
 const clubJoin = r => require.ensure([], () => r(require('./pages/club/join')))
 const clubDetail = r => require.ensure([], () => r(require('./pages/club/detail')))
 const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
@@ -20,11 +20,15 @@ const addrDetail = r => require.ensure([], () => r(require('./pages/class/addres
 export default [
   {
     path: '',
-    redirect: '/entry'
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    component: home
   },
   {
     path: '/entry',
-    component: entry
+    component: entry,
   },
   {
     path: '/login',
@@ -43,8 +47,8 @@ export default [
     component: passModify
   },
   {
-    path: '/home',
-    component: home
+    path: '/club',
+    component: club,
   },
   {
     path: '/club-join',
@@ -55,31 +59,31 @@ export default [
     component: clubDetail
   },
   {
-    path: '/schedule',
-    component: classSchedule
-  },
-  {
-    path: '/all',
+    path: '/class-all',
     component: classAll
   },
   {
-    path: '/detail/:id',
+    path: '/class-detail/:id',
     component: classDetail
   },
   {
-    path: '/vip-detail/:id',
+    path: '/vip-class-detail/:id',
     component: vipClassDetail
   },
   {
-    path: '/due',
+    path: '/class-due',
     component: classDue
   },
   {
-    path: '/address',
+    path: '/class-address',
     component: classAddress
   },
   {
     path: '/addr-detail',
     component: addrDetail
+  },
+  {
+    path: '/class-schedule',
+    component: classSchedule
   }
 ]

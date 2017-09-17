@@ -9,7 +9,7 @@
       <div class="section-info-container">
         <div class="vip-top-container">
           <h1 class="vip-top-title">季度卡会员</h1>
-          <input class="info-radio" @change="vipChangeAction"   type="radio" />
+          <input class="info-radio" @change="vipChangeAction" type="radio" />
         </div>
         <p>剩余可用次数
         </p>
@@ -22,25 +22,41 @@
     <footer @click="submitDue" class="footer-button">
       下一步
     </footer>
+    <toast v-model="toastInfo.isShow" type="text" :time="1000" is-show-mask :text="toastInfo.message"></toast>
+
   </div>
 </template>
 
 <script>
+  import {
+    Toast
+  } from 'vux'
+
   export default {
     data() {
       return {
-        vipTypeChecked: false
+        vipTypeChecked: false,
+        toastInfo: {
+          message: '',
+          isShow: false
+        }
       }
     },
+    components: {
+      Toast
+    },
     methods: {
-        vipChangeAction(e) {
-            this.vipTypeChecked = e.target.checked
-        },
-        submitDue() {
-            if(vipTypeChecked) {
-                this.$route.push('')
-            }
+      vipChangeAction(e) {
+        this.vipTypeChecked = e.target.checked
+      },
+      submitDue() {
+        if (this.vipTypeChecked) {
+          this.$router.push('/club-detail')
+        } else {
+          this.toastInfo.message = '请选择会员类型',
+            this.toastInfo.isShow = true
         }
+      }
     }
   }
 
