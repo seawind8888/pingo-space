@@ -63,8 +63,6 @@
 </script>
 
 <style lang="scss" scope>
-  @import '../../assets/css/reset.scss';
-  @import '../../assets/css/class-due.scss';
-  @import '../../assets/css/club-join.scss';
+  @import '../../assets/css/club.scss';
 
 </style>

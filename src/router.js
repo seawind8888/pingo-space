@@ -9,6 +9,7 @@ const home = r => require.ensure([], () => r(require('./pages/home')))
 const club = r => require.ensure([], () => r(require('./pages/club/club')))
 const clubJoin = r => require.ensure([], () => r(require('./pages/club/join')))
 const clubDetail = r => require.ensure([], () => r(require('./pages/club/detail')))
+const clubDue = r => require.ensure([], () => r(require('./pages/club/due')))
 const classAll = r => require.ensure([], () => r(require('./pages/class/all')))
 const classDetail = r => require.ensure([], () => r(require('./pages/class/detail')))
 const vipClassDetail = r => require.ensure([], () => r(require('./pages/class/vip-detail')))
@@ -57,6 +58,10 @@ export default [
   {
     path: '/club-detail',
     component: clubDetail
+  },
+  {
+    path: '/club-due',
+    component: clubDue
   },
   {
     path: '/class-all',

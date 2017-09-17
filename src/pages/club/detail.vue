@@ -34,7 +34,7 @@
         <p>英文水平：中等</p>
       </div>
     </section>
-    <router-link to="/club-join">
+    <router-link to="/club-due">
       <footer class="footer-button">
         支付
       </footer>
@@ -48,6 +48,6 @@
 </script>
 
 <style lang="scss">
-  @import '../../assets/css/club-detail.scss';
+  @import '../../assets/css/club.scss';
 
 </style>

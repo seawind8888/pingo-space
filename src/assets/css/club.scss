@@ -1,3 +1,16 @@
+
+.vip-top-container {
+    display: flex;
+}
+.vip-top-title {
+    display: inline-block;
+    flex:1;
+}
+.agreement-info-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center
+}
 .sign-info-section {
     margin-top: 10px;
     padding: 0 15px;
@@ -18,10 +31,22 @@
         b {
             color:#EAB726;
         }
+        p {
+            text-align: left;
+        }
+        .section-info-inline {
+            display: flex;
+            flex-direction: row;
+        }
         .info-tag {
             float: right;
             display: flex;
             align-items: center;
+        }
+        .center-info {
+            flex: 1;
+            text-align: center;
+            justify-content: center;
         }
         .info-radio {
             display: inline-block;
@@ -58,9 +83,15 @@
         margin-top: 5px;
         color: #666666;
         font-size: 1.2rem;
+        p {
+            text-align: left
+        }
     }
     .item-price {
         color: #EAB726;
         float: right;
     }
+}
+.club-due-container {
+    margin-top: 30px;
 }
