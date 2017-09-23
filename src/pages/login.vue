@@ -30,7 +30,7 @@ export default {
   methods: {
     signIn() {
       var self = this
-      let baseURL = process.env === 'production' ? 'http://staging.pingospace.com' : ''
+      let baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
       // let baseURL = 'http://staging.pingospace.com'
       axios({
         method: 'post',

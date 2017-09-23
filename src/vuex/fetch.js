@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = process.env === 'production' ? 'http://staging.pingospace.com' : ''
+const baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
 
 
 export const fetchLearnex = (token) => {
