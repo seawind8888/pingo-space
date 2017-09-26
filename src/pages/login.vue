@@ -34,47 +34,67 @@
       signIn() {
         var self = this
         let baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
-        let dataInfo = {
-          mobile: this.userName,
-          password: this.passWord
-        }
-        // let baseURL = 'http://staging.pingospace.com'
-        axios({
-            method: 'post',
-            // url: '/api/auth/login',
-            url: `http://staging.pingospace.com/api/auth/login`,
-            headers: {
-              // "Accept": "application/json",
-              // "Accept-Language": "zh-hans",
-              "Content-Type":"application/x-www-form-urlencoded"
-            },
-            // withCredentials: true,
-            // data: {
-            //   mobile: this.userName,
-            //   password: this.passWord
-            // },
-            // transformRequest: [(data) => JSON.stringify(data)],
-            // transformRequest: [(data) => {return Qs.stringify(data)}]
-            data: Qs.stringify(dataInfo)
-          })
-          .then((res) => {
-            console.log(res)
+        $.ajax({
+          url: "http://staging.pingospace.com/api/auth/login",
+          data: {
+            mobile: self.userName,
+            password: self.passWord
+          },
+          type: 'post',
+          success:(res) => {
+             console.log(res)
             self.toastInfo.message = '登录成功'
             self.toastInfo.isShow = true
-            localStorage.token = res.data.token.key
+            window.localStorage.token = res.token.key
             // self.$store.state.token = localStorage.token
-            localStorage.time = Date.parse(res.data.token.expires_at)
-            localStorage.pk = res.data.user.pk
+            window.localStorage.time = Date.parse(res.token.expires_at)
+            window.localStorage.pk = res.user.pk
             setTimeout(function () {
               self.$router.push('/home')
             }, 1200);
-          })
-          .catch((err) => {
-            console.log(err)
-            self.toastInfo.message = '登录失败',
-              self.toastInfo.isShow = true
+          }
+        })
+        // axios({
+        //     method: 'post',
+        //     baseURL: 'http://staging.pingospace.com',
+        //     url: '/api/auth/login',
+        //     headers: {
+        //       // "Accept": "application/json",
+        //       // "Accept-Language": "zh-hans",
+        //       "Content-Type": "application/x-www-form-urlencoded"
+        //     },
+        //     // responseType: 'json',
+        //     // data: {
+        //     //   mobile: this.userName,
+        //     //   password: this.passWord
+        //     // },
+        //     // withCredentials: true,
+        //     // transformRequest: [function (data) {
+        //     //   let formData = Qs.stringify(data)
+        //     //   return formData
+        //     // }],
+        //     data: dataInfo
+        //     // data: `mobile=${this.userName}&password=${this.passWord}`
+        //     // data: Qs.stringify(dataInfo)
+        //   })
+        //   .then((res) => {
+        //     console.log(res)
+        //     self.toastInfo.message = '登录成功'
+        //     self.toastInfo.isShow = true
+        //     localStorage.token = res.data.token.key
+        //     // self.$store.state.token = localStorage.token
+        //     localStorage.time = Date.parse(res.data.token.expires_at)
+        //     localStorage.pk = res.data.user.pk
+        //     setTimeout(function () {
+        //       self.$router.push('/home')
+        //     }, 1200);
+        //   })
+        //   .catch((err) => {
+        //     console.log(err)
+        //     self.toastInfo.message = '登录失败',
+        //       self.toastInfo.isShow = true
 
-          })
+        //   })
       }
     }
   }

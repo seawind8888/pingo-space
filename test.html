@@ -9,10 +9,14 @@
 $(document).ready(function(){
 	$("button").click(function(){
 		$.ajax({
-            url:"http://staging.pingospace.com/api/learnex/1",
+            url:"http://staging.pingospace.com/api/auth/login",
+			data: {
+				mobile: $('#username').val(),
+				password: $('#password').val()
+			},
             type: 'post',
             success:function(result){
-			$("#div1").html(result);
+			$("#div1").html(result.user.pk);
 		}});
 	});
 });
@@ -21,7 +25,13 @@ $(document).ready(function(){
 <body>
 
 <div id="div1"><h2>test</h2></div>
-<button>获取其他内容</button>
+<div>
+	账号<input id="username">
+</div>
+<div>
+	密码<input  id="password">
+</div>
+<button id="button">登录</button>
 
 </body>
 </html>

@@ -8,6 +8,7 @@ export const fetchLearnex = () => {
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/learnex/1`,
+    baseURL: 'http://staging.pingospace.com',
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans"
@@ -21,6 +22,7 @@ export const fetchSchoolex = (learn) => {
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/schoolex?learn=${learn}`,
+    baseURL: 'http://staging.pingospace.com',
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
@@ -34,6 +36,7 @@ export const fetchCellSchoolex = (id) => {
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/schoolex/${id}`,
+    baseURL: 'http://staging.pingospace.com',
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
@@ -47,23 +50,35 @@ export const fetchEnrollmentsInfo = (pk) => {
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/users/${pk}/enrollments`,
+    baseURL: 'http://staging.pingospace.com',
+    withCredentials: true, 
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
+      "Content-Type": "application/x-www-form-urlencoded",
       // "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }
 
 export const fetchUserInfo = (pk) => {
+  // return new Promise((resolve,reject) => {
+  //   $.ajax({
+  //     type: 'get',
+  //     url: `http://staging.pingospace.com/api/users/${pk}/userrests`,
+  //   })
+  // })
   return axios({
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/users/${pk}/userrests`,
+    baseURL: 'http://staging.pingospace.com',
+    withCredentials: true, 
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
-      // "Authorization": `Token ${window.localStorage.token}`
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }
