@@ -304,7 +304,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
   @import '../assets/css/clubIndex.scss';
 
 </style>
