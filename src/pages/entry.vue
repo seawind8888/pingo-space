@@ -25,7 +25,7 @@ export default {
     let curTime = new Date()
     if (localStorage.time && localStorage.time > curTime) {
       this.$router.push('./home')
-      this.$store.state.token = localStorage.token
+      // this.$store.state.token = localStorage.token
     }
   }
 }
