@@ -10,62 +10,77 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import { Toast } from 'vux'
-
-export default {
-  data() {
-    return {
-      userName: '',
-      passWord: '',
-      toastInfo: {
-        message: '',
-        isShow: false
-      }
-    }
-  },
-  components: {
+  import axios from 'axios'
+  import Qs from 'qs'
+  import {
     Toast
-  },
-  methods: {
-    signIn() {
-      var self = this
-      let baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
-      // let baseURL = 'http://staging.pingospace.com'
-      axios({
-        method: 'post',
-        // url: '/api/auth/login',
-        url: `${baseURL}/api/auth/login`,
-        headers: {
-          "Accept": "application/json",
-          "Accept-Language": "zh-hans"
-        },
-        data: {
+  } from 'vux'
+
+  export default {
+    data() {
+      return {
+        userName: '',
+        passWord: '',
+        toastInfo: {
+          message: '',
+          isShow: false
+        }
+      }
+    },
+    components: {
+      Toast
+    },
+    methods: {
+      signIn() {
+        var self = this
+        let baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
+        let dataInfo = {
           mobile: this.userName,
           password: this.passWord
         }
-      })
-        .then((res) => {
-          console.log(res)
-          self.toastInfo.message = '登录成功'
-          self.toastInfo.isShow = true
-          localStorage.token = res.data.token.key
-          localStorage.time = Date.parse(res.data.token.expires_at)
-          localStorage.pk = res.data.user.pk
-          setTimeout(function () {
-            self.$router.push('/home')
-          }, 1200);
-        })
-        .catch((err) => {
-          console.log(err)
-          self.toastInfo.message = '登录失败',
+        // let baseURL = 'http://staging.pingospace.com'
+        axios({
+            method: 'post',
+            // url: '/api/auth/login',
+            url: `http://staging.pingospace.com/api/auth/login`,
+            headers: {
+              // "Accept": "application/json",
+              // "Accept-Language": "zh-hans",
+              "Content-Type":"application/x-www-form-urlencoded"
+            },
+            // withCredentials: true,
+            // data: {
+            //   mobile: this.userName,
+            //   password: this.passWord
+            // },
+            // transformRequest: [(data) => JSON.stringify(data)],
+            // transformRequest: [(data) => {return Qs.stringify(data)}]
+            data: Qs.stringify(dataInfo)
+          })
+          .then((res) => {
+            console.log(res)
+            self.toastInfo.message = '登录成功'
             self.toastInfo.isShow = true
+            localStorage.token = res.data.token.key
+            // self.$store.state.token = localStorage.token
+            localStorage.time = Date.parse(res.data.token.expires_at)
+            localStorage.pk = res.data.user.pk
+            setTimeout(function () {
+              self.$router.push('/home')
+            }, 1200);
+          })
+          .catch((err) => {
+            console.log(err)
+            self.toastInfo.message = '登录失败',
+              self.toastInfo.isShow = true
 
-        })
+          })
+      }
     }
   }
-}
+
 </script>
 <style lang="scss">
-@import '../assets/css/entry-pages.scss';
+  @import '../assets/css/entry-pages.scss';
+
 </style>

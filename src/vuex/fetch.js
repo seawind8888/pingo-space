@@ -1,22 +1,22 @@
 import axios from 'axios'
+import Qs from 'qs'
 const baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
+axios.defaults.headers.common['Authorization'] = `Token ${window.localStorage.token}`
 
-
-export const fetchLearnex = (token) => {
+export const fetchLearnex = () => {
   return axios({
     method: 'get',
     // url: '/api/auth/login',
     url: `${baseURL}/api/learnex/1`,
     headers: {
       "Accept": "application/json",
-      "Accept-Language": "zh-hans",
-      "Authorization": `Token ${token}`
+      "Accept-Language": "zh-hans"
     }
   })
 }
 
 
-export const fetchSchoolex = (token, learn) => {
+export const fetchSchoolex = (learn) => {
   return axios({
     method: 'get',
     // url: '/api/auth/login',
@@ -24,12 +24,12 @@ export const fetchSchoolex = (token, learn) => {
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
-      "Authorization": `Token ${token}`
+      // "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }
 
-export const fetchCellSchoolex = (token, id) => {
+export const fetchCellSchoolex = (id) => {
   return axios({
     method: 'get',
     // url: '/api/auth/login',
@@ -37,12 +37,12 @@ export const fetchCellSchoolex = (token, id) => {
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
-      "Authorization": `Token ${token}`
+      // "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }
 
-export const fetchEnrollmentsInfo = (token, pk) => {
+export const fetchEnrollmentsInfo = (pk) => {
   return axios({
     method: 'get',
     // url: '/api/auth/login',
@@ -50,12 +50,12 @@ export const fetchEnrollmentsInfo = (token, pk) => {
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
-      "Authorization": `Token ${token}`
+      // "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }
 
-export const fetchUserInfo = (token, pk) => {
+export const fetchUserInfo = (pk) => {
   return axios({
     method: 'get',
     // url: '/api/auth/login',
@@ -63,7 +63,7 @@ export const fetchUserInfo = (token, pk) => {
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
-      "Authorization": `Token ${token}`
+      // "Authorization": `Token ${window.localStorage.token}`
     }
   })
 }

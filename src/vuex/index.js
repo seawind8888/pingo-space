@@ -16,7 +16,8 @@ const store = new Vuex.Store({
         schoolexCell: '',
         enrollments: '',
         user: '',
-        isReady: false
+        isReady: false,
+        token: ''
     }
 })
 

@@ -131,6 +131,7 @@ p {
 .main {
   .tab-bar-container {
     padding: 25px 0;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: row;
   }
@@ -145,7 +146,9 @@ p {
       width: 40px;
       height: 40px;
     }
-    
+    p {
+      text-align: center
+    }
   }
 }
 // .choose-class-container {
@@ -191,7 +194,8 @@ p {
     line-height: 30px;
     font-size: 1.2rem;
     text-align: center;
-    border-bottom: 1px solid #eaeaec
+    border-bottom: 1px solid #eaeaec;
+   
   }
   .item-on {
     border-bottom: 1px solid #2F3044
@@ -200,14 +204,15 @@ p {
 .class-time-container {
   font-size: 1.4rem;
   color: #999999;
-  padding: 20px;
+  padding: 15px;
+  padding-top: 10px;
   padding-bottom: 0;
   text-align: left;
   img {
     width: 12px;
     height: 12px;
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 5px;
   }
 }
 .no-class-block {
@@ -231,7 +236,7 @@ p {
 }
 .class-part-container {
   .class-list-container {
-    margin-top: 10px;
+    // margin-top: 10px;
   }
 }
 .choose-class-main-container {
