@@ -23,9 +23,9 @@ export default {
   },
   created() {
     let curTime = new Date()
-    if (localStorage.time > curTime) {
-      this.$router.push('./home')
-    }
+    // if (localStorage.time > curTime) {
+    //   this.$router.push('./home')
+    // }
   }
 }
 </script>

@@ -38,7 +38,7 @@ import addrDetail from'./pages/class/address-detail'
 export default [
   {
     path: '',
-    redirect: '/home'
+    redirect: '/entry'
   },
   {
     path: '/home',

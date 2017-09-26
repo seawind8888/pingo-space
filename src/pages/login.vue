@@ -40,10 +40,7 @@ export default {
           "Accept": "application/json",
           "Accept-Language": "zh-hans"
         },
-        data: {
-          mobile: this.userName,
-          password: this.passWord
-        }
+        data: `mobile=${this.userName}&password=${this.passWord}`
       })
         .then((res) => {
           console.log(res)
