@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Qs from 'qs'
 const baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
 
 
@@ -10,6 +11,7 @@ export const fetchLearnex = (token) => {
     headers: {
       "Accept": "application/json",
       "Accept-Language": "zh-hans",
+      "Content-Type":"application/x-www-form-urlencoded",
       "Authorization": `Token ${token}`
     }
   })

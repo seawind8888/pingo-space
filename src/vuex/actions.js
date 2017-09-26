@@ -12,8 +12,8 @@ export function getLearnexInfo({
   state
 }) {
   //判断访客模式
-let token = window.localStorage.token || ''
-  return fetchLearnex(token)
+// let token = window.localStorage.token || ''
+  return fetchLearnex(state.token)
     .then((res) => {
       //传入俱乐部pkid
       state.learn = res.data.pk
@@ -27,8 +27,8 @@ export function getSchoolexInfo({
   state
 }) {
   //判断访客模式
-let token = window.localStorage.token || ''
-  return fetchSchoolex(token, state.learn)
+// let token = window.localStorage.token || ''
+  return fetchSchoolex(state.token, state.learn)
     .then((res) => {
       commit('FETCH_SCHOOLEX_FINISH', [res.data])
     })
@@ -39,9 +39,9 @@ export function getSchoolexCellInfo({
   commit,
   state
 }, id) {
-  let token = window.localStorage.token || ''
+  // let token = window.localStorage.token || ''
   state.isReady = false
-  return fetchCellSchoolex(token, id)
+  return fetchCellSchoolex(state.token, id)
     .then((res) => {
       commit('FETCH_SCHOOLEX_CELL_FINISH', res.data)
     })
@@ -52,8 +52,8 @@ export function getEnrollmentsInfo({
   commit,
   state
 }, pk) {
-  let token = window.localStorage.token || ''
-  return fetchEnrollmentsInfo(token, pk)
+  // let token = window.localStorage.token || ''
+  return fetchEnrollmentsInfo(state.token, pk)
     .then((res) => {
       commit('FETCH_ENROLLMENTS_FINISH', [res.data])
     })
@@ -64,8 +64,8 @@ export function getUserInfo({
   commit,
   state
 }, pk) {
-  let token = window.localStorage.token || ''
-  return fetchUserInfo(token, pk)
+  // let token = window.localStorage.token || ''
+  return fetchUserInfo(state.token, pk)
     .then((res) => {
       commit('FETCH_USER_FINISH', [res.data])
     })

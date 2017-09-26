@@ -11,6 +11,7 @@
 </template>
 <script>
 import axios from 'axios'
+import Qs from 'qs'
 import { Toast } from 'vux'
 
 export default {
@@ -31,6 +32,10 @@ export default {
     signIn() {
       var self = this
       let baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
+      let dataInfo = {
+          mobile: this.userName,
+          password: this.passWord
+        }
       // let baseURL = 'http://staging.pingospace.com'
       axios({
         method: 'post',
@@ -38,15 +43,22 @@ export default {
         url: `${baseURL}/api/auth/login`,
         headers: {
           "Accept": "application/json",
-          "Accept-Language": "zh-hans"
+          "Accept-Language": "zh-hans",
+          "Content-Type":"application/x-www-form-urlencoded"
         },
-        data: `mobile=${this.userName}&password=${this.passWord}`
+        data: {
+          mobile: this.userName,
+          password: this.passWord
+        },
+        transformRequest: [(data) => {return Qs.stringify(data)}]
+        // data: `mobile=${this.userName}&password=${this.passWord}`
       })
         .then((res) => {
           console.log(res)
           self.toastInfo.message = '登录成功'
           self.toastInfo.isShow = true
           localStorage.token = res.data.token.key
+          self.$store.state.token = localStorage.token
           localStorage.time = Date.parse(res.data.token.expires_at)
           localStorage.pk = res.data.user.pk
           setTimeout(function () {
