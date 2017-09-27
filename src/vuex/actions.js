@@ -26,7 +26,7 @@ export function getSchoolexInfo({
   state
 }) {
   //判断访客模式
-  return fetchSchoolex('1')
+  return fetchSchoolex(state.learn)
     .then((res) => {
       commit('FETCH_SCHOOLEX_FINISH', [res])
     })

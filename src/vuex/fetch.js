@@ -21,30 +21,19 @@ export const fetchCellSchoolex = (id) => {
 }
 
 export const fetchEnrollmentsInfo = (pk) => {
+  console.log(window.localStorage.token)
   return fetch(`${baseURL}/api/users/${pk}/enrollments`, {
       headers: {
-        "Authorization": `Token ${window.localStorage.token}`
+        'Authorization': `Token ${window.localStorage.token}`
       }
     })
     .then((response) => response.json())
-  // return axios({
-  //   method: 'get',
-  //   // url: '/api/auth/login',
-  //   url: `${baseURL}/api/users/${pk}/enrollments`,
-  //   baseURL: 'http://staging.pingospace.com',
-  //   headers: {
-  //     "Accept": "application/json",
-  //     "Accept-Language": "zh-hans",
-  //     "Content-Type": "application/x-www-form-urlencoded",
-  //     // "Authorization": `Token ${window.localStorage.token}`
-  //   }
-  // })
 }
 
 export const fetchUserInfo = (pk) => {
   return fetch(`${baseURL}/api/users/${pk}/userrests`, {
       headers: {
-        "Authorization": `Token ${window.localStorage.token}`
+        'Authorization': `Token ${window.localStorage.token}`
       }
     })
     .then((response) => response.json())
