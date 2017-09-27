@@ -19,9 +19,9 @@ let webpackConfig  = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
-  externals: {
-    'jquery':'window.jQuery'
-  },
+  // externals: {
+  //   'jquery':'window.jQuery'
+  // },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

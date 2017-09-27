@@ -294,7 +294,19 @@
       }
     },
     mounted() {
-      this.$store.dispatch('getHomeInfo')
+      // this.$store.dispatch('getHomeInfo')
+      // $.ajax({
+      //   type: 'get',
+      //   url: `http://staging.pingospace.com/api/learnex/1`,
+      //   success: (e) => {
+      //     console.log(e)
+      //   }
+      // })
+      // this.$store.dispatch('getHomeInfo')
+      this.$store.dispatch('getLearnexInfo')
+      setTimeout(() => {
+        this.$store.dispatch('getSchoolexInfo')
+      }, 100)
       if (localStorage.token) {
         this.$store.dispatch('getUserInfo', localStorage.pk)
         this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)

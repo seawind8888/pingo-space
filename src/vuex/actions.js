@@ -15,7 +15,7 @@ export function getLearnexInfo({
   return fetchLearnex(window.localStorage.token)
     .then((res) => {
       //传入俱乐部pkid
-      state.learn = res.data.pk
+      state.learn = res.pk
       commit('FETCH_LEARNEX_FINISH', res.data)
     })
 }
@@ -26,9 +26,9 @@ export function getSchoolexInfo({
   state
 }) {
   //判断访客模式
-  return fetchSchoolex(state.learn)
+  return fetchSchoolex('1')
     .then((res) => {
-      commit('FETCH_SCHOOLEX_FINISH', [res.data])
+      commit('FETCH_SCHOOLEX_FINISH', [res])
     })
 }
 
@@ -40,7 +40,7 @@ export function getSchoolexCellInfo({
   state.isReady = false
   return fetchCellSchoolex(id)
     .then((res) => {
-      commit('FETCH_SCHOOLEX_CELL_FINISH', res.data)
+      commit('FETCH_SCHOOLEX_CELL_FINISH', res)
     })
 }
 
