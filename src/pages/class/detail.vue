@@ -1,253 +1,148 @@
 <template>
-  <div v-if="isReady" class="detail-container">
-    <header>
-      <img :src="schoolexCell.cover" />
-      <div class="detail-header-container">
-        <h1 class="class-title">{{schoolexCell.detail}}</h1>
-        <p class="class-price">会员：消费{{schoolexCell.timecost}}次次数/非会员：{{schoolexCell.price}}元/次</p>
-        <p class="class-info">时长：{{schoolexCell.duration}}小时，人数 {{schoolexCell.max_humans}}
-        </p>
-        <p class="class-info info-bottom">
-          <img class="info-icon" :src="schoolexCell.learn.icon" /> {{schoolexCell.learn.detail}}
-        </p>
+  <div class="warpper">
+    <header class="vip-header-container">
+      <div class="vip-header-left">
+        <img src="../../assets/imgs/vip-class-detail/detail_icon_success@2x.png">
+      </div>
+      <div class="vip-header-middle">
+        <p><span>选课成功</span></p>
+        <p>距离活动开始还有</p>
+        <p><span>999</span>天 <span>24</span>小时<span>666</span>分</p>
+      </div>
+      <div class="vip-header-right">
+        <a class="vip-header-button">去预习</a>
       </div>
     </header>
-    <section class="class-content-container">
-      <div class="section-title-container">
-        <div class="title-container">
-          <i class="title-icon"></i> 课程介绍
-        </div>
-      </div>
-      <div class="class-content">
-        <div class="section-content">
-          <!-- <h1>课程介绍</h1> -->
-          <p>{{schoolexCell.detail}}</p>
-        </div>
-      </div>
-    </section>
-    <section class="class-list-container">
-      <div class="section-title-container">
-        <div class="title-container">
-          <i class="title-icon"></i> 课程信息
-        </div>
-      </div>
-      <ul class="list-item-container">
-        <li v-if="schoolexCell.teacher_ref.length>0" class="class-list-item">
-          <div class="list-left">
-            <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-1.png" />
+    <section class="vip-class-list-container">
+      <ul>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_course@2x.png" />
+            <p>课 程</p>
           </div>
-          <div class="list-right">
-            <div class="right-title">外教</div>
-            <div class="right-info first-list">
-              <img class="user-icon" :src="schoolexCell.teacher_ref[0].portrait" />
-              <span>{{schoolexCell.teacher_ref[0].first_name}} ({{schoolexCell.teacher_ref[0].nationality.name}})
-              </span>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>美国篮球文化节文化节文化节美国篮球文化节文化节</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
         </li>
-        <li class="class-list-item">
-          <div class="list-left">
-            <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-2.png" />
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img style="height:15px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_time@2x.png" />
+            <p>时 间</p>
           </div>
-          <div class="list-right">
-            <div class="right-title">课程时间</div>
-            <div class="right-info">
-              <span>{{schoolexCell.enrollment_begin | getClassTimeFormat(schoolexCell.enrollment_begin)}}</span>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>12月25日14:00-16:00</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
-          <div class="list-last">
-            <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-          </div>
         </li>
-        <li class="class-list-item">
-          <div class="list-left">
-            <img class="list-icon long-icon" src="../../assets/imgs/classDetails/class-list-icon-3.png" />
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img style="height:19px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_location@2x.png" />
+            <p>地 点</p>
           </div>
-          <div class="list-right">
-            <div class="right-title">课程地点</div>
-            <div class="right-info">
-              <span>{{schoolexCell.classroom.title | addressFilter(schoolexCell.classroom.title)}}</span>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <p>东升科技园</p>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
             </div>
           </div>
-          <div class="list-last">
-            <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-          </div>
         </li>
-        <!-- <li class="class-list-item">
-              <div class="list-left">
-                <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-4.png" />
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_teacher@2x.png" />
+            <p>外 教</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
               </div>
-              <div class="list-right">
-                <div class="right-title">服务区域</div>
-                <div class="right-info">
-                  <span>朝阳区</span>
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_students@2x.png" />
+            <p>学 员</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container">
+              <div class="student-list-container">
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
+                </div>
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
+                </div>
+                <div class="student-avatar-container">
+                  <img class="right-info-avatar " src="../../assets/imgs/App/img_test.png" />
                 </div>
               </div>
-              <div class="list-last">
-                <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              <div class="student-total-info">
+                99/99
               </div>
-            </li>
-            <li class="class-list-item">
-              <div class="list-left">
-                <img class="list-icon" src="../../assets/imgs/classDetails/class-list-icon-5.png" />
-              </div>
-              <div class="list-right">
-                <div class="right-title">服务方式</div>
-                <div class="right-info">
-                  <span>朝阳区</span>
+            </div>
+            <div class="vip-last-icon-container">
+              <img class="enter-icon" src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+            </div>
+          </div>
+        </li>
+        <li class="vip-list-item">
+          <div class="vip-class-left">
+            <img style="width:13px" class="vip-item-icon" src="../../assets/imgs/vip-class-detail/detail_icon_ta@2x.png" />
+            <p>助 教</p>
+          </div>
+          <div class="vip-class-right">
+            <div class="vip-class-right-container assistant-info">
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+                <div class="assistant-call-container">
+                  <img class="call-img" src="../../assets/imgs/vip-class-detail/detail_icon_phonecall@2x.png"></img>
                 </div>
               </div>
-              <div class="list-last">
-                <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
+              <div class="right-info-container">
+                <img class="right-info-avatar" src="../../assets/imgs/App/img_test.png" />
+                <span>Sophie</span>
+                <div class="assistant-call-container">
+                  <img class="call-img" src="../../assets/imgs/vip-class-detail/detail_icon_phonecall@2x.png"></img>
+                </div>
               </div>
-            </li> -->
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
-    <!-- <section>
-          <div class="section-title-container">
-            <div class="title-container">
-              <i class="title-icon"></i> 关联的Club
-            </div>
-            <div class="title-container-right">
-              查看全部
-              <img src="../../assets/imgs/classDetails/class-list-enter-icon.png">
-            </div>
-          </div>
-          <div class="club-list-container">
-            <div class="class-item-container">
-              <div class="item-container">
-                <div class="item-left">
-                  <img src='https://ooo.0o0.ooo/2017/04/08/58e8b43ad64b9.png'>
-                </div>
-                <div class="item-middle">
-                  <div class="item-title-container">欧美幼儿俱乐部</div>
-                  <div class="item-info-container">
-                    时间:&nbsp2017.01.01（周一）10-12点
-                  </div>
-                  <div class="item-info-container">
-                    地点:&nbsp三里屯soho星巴克咖啡厅
-                  </div>
-                  <div class="item-info-container">
-                    外教:&nbspTess
-                  </div>
-                </div>
-                <div class="item-right">
-                  <img src="../../assets/imgs/classDetails/class-list-enter-icon.png" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
-    <section class="last-section">
-      <div class="section-title-container">
-        <div class="title-container">
-          <i class="title-icon"></i> 评论
-        </div>
-        <div class="title-container-right">
-          查看更多
-          <img src="../../assets/imgs/classDetails/class-list-enter-icon.png">
-        </div>
-      </div>
-      <!-- <ul class="evaluate-list-container">
-        <li class="evaluate-list-item">
-          <div class="list-left">
-            <img src="../../assets/imgs/App/img_test.png">
-          </div>
-          <div class="list-right">
-            <div class="list-user-name">
-              <span>Anna</span>
-              <div class="reply-icon-container">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-              </div>
-            </div>
-            <div class="list-reply-time">2016-09-09</div>
-            <div class="reply-info">此处是评价文字文字评价评价评价</div>
-          </div>
-        </li>
-        <li class="evaluate-list-item">
-          <div class="list-left">
-            <img src="../../assets/imgs/App/img_test.png">
-          </div>
-          <div class="list-right">
-            <div class="list-user-name">
-              <span>Anna</span>
-              <div class="reply-icon-container">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-                <img class="reply-icon" src="../../assets/imgs/classDetails/reply-star-icon.png">
-              </div>
-            </div>
-            <div class="list-reply-time">2016-09-09</div>
-            <div class="reply-info">此处是评价文字文字评价评价评价</div>
-          </div>
-        </li>
-      </ul> -->
-    </section>
-    <footer class="detail-footer-button">
-      <a class="footer-main-btn">
-        <router-link to="/club">
-          <span class="btn-title">立即预定</span>
-        </router-link>
-        <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人， 还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
-      </a>
+    <footer class="vip-footer-btn">
+      <span class="btn-title">去评论</span>
+      <span class="btn-info">完成后发表一下自己的感受吧~</span>
     </footer>
-    <!-- <footer class="detail-footer-button">
-      <a class="icon-btn-one">
-        <img src="../../assets/imgs/classDetails/button-icon-1.png">
-      </a>
-      <a class="icon-btn-two">
-        <img src="../../assets/imgs/classDetails/button-icon-2.png">
-      </a>
-      <a class="footer-main-btn">
-        <router-link to="/due">
-          <span class="btn-title">立即预定</span>
-        </router-link>
-        <span class="btn-info">已报名{{schoolexCell.enrollments_count}}人， 还剩{{schoolexCell.max_humans - schoolexCell.enrollments_count}}人</span>
-      </a>
-    </footer> -->
   </div>
 </template>
+
 <script>
-import { mapState } from 'vuex'
-import { fmtDate } from '../../utils.js'
+  export default {
 
-export default {
-  data() {
-    return {
-
-    }
-  },
-  computed: {
-    ...mapState(['schoolexCell', 'isReady']),
-  },
-  filters: {
-    getClassTimeFormat(time) {
-      return fmtDate(new Date(Date.parse(time)), 2);
-    },
-    addressFilter(addr) {
-      let site
-      Object.keys(addr).forEach((key) => {
-          site = addr['zh-hans']
-      })
-      return site
-    }
-  },
-  methods: {
-
-  },
-  created() {
-    // this.pkid = this.$route.params.id
-    this.$store.dispatch('getSchoolexCellInfo', this.$route.params.id)
   }
-}
 
 </script>
-<style lang="scss">
-@import '../../assets/css/class-detail.scss';
+
+<style lang="sass" scope>
+  @import '../../assets/css/vip-class-detail.scss'
+
 </style>
