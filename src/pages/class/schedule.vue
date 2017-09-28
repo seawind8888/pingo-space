@@ -7,7 +7,7 @@
       <div class="class-part-container">
         <ul>
           <li :key="item.pk" v-for="item in schoolex">
-            <router-link :to="'/vip-detail/'+item.pk" class="class-list-container">
+            <router-link :to="'/class-detail/'+item.pk" class="class-list-container">
               <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
                 :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
                 :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"

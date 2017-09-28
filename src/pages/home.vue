@@ -85,7 +85,7 @@
           <div class="class-part-container">
             <ul>
               <li :key="item.pk" v-for="item in dateItem.class">
-                <router-link :to="'/class-detail/'+item.pk" class="class-list-container">
+                <router-link :to="'/club-detail/'+item.pk" class="class-list-container">
                   <class-item :item-cover="item.icon" :item-title="item.detail" :item-age-min="item.crowd.min_age" :item-age-max="item.crowd.max_age"
                     :item-time="getClassTimeFormat(item.crowd.created_at)" :item-address="addressFilter(item.classroom.title)"
                     :item-status="item.dynamic_status" :item-enrollments-count="item.enrollments_count" :item-max-humans="item.max_humans"
@@ -292,26 +292,9 @@
           return itemFilter
         })
       },
-      async fetchData () {
-        await this.$store.dispatch('getLearnexInfo')
-        await this.$store.dispatch('getSchoolexInfo')
-      } 
     },
     mounted() {
-      // this.$store.dispatch('getHomeInfo')
-      // $.ajax({
-      //   type: 'get',
-      //   url: `http://staging.pingospace.com/api/learnex/1`,
-      //   success: (e) => {
-      //     console.log(e)
-      //   }
-      // })
-      // this.$store.dispatch('getHomeInfo')
-      this.fetchData()
-      // this.$store.dispatch('getLearnexInfo')
-      // setTimeout(() => {
-      //   this.$store.dispatch('getSchoolexInfo')
-      // }, 100)
+      this.$store.dispatch('getSchoolexInfo')
       if (localStorage.token) {
         this.$store.dispatch('getUserInfo', localStorage.pk)
         this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)

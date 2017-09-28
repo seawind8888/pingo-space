@@ -10,8 +10,8 @@ export const fetchLearnex = () => {
 }
 
 
-export const fetchSchoolex = (learn) => {
-  return fetch(`${baseURL}/api/schoolex?learn=${learn}`)
+export const fetchSchoolex = (param) => {
+  return fetch(`${baseURL}/api/schoolex?`)
     .then((response) => response.json())
 }
 
@@ -21,7 +21,7 @@ export const fetchCellSchoolex = (id) => {
 }
 
 export const fetchClassList = () => {
-  return fetch(`${baseURL}/api/classgroups`)
+  return fetch(`${baseURL}/api/classgroups?user=${window.localStorage.pk}`)
     .then((response) => response.json())
 }
 

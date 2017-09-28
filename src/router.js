@@ -10,7 +10,7 @@ import clubJoin from './pages/club/join'
 import clubDetail from './pages/club/detail'
 import clubDue from'./pages/club/due'
 import classAll from'./pages/class/all'
-import classDetail from'./pages/club/detail'
+import classDetail from'./pages/class/detail'
 import classDue from'./pages/class/due'
 import classAddress from'./pages/class/address'
 import classSchedule from'./pages/class/schedule'
@@ -72,7 +72,7 @@ export default [
     component: clubJoin
   },
   {
-    path: '/club-detail',
+    path: '/club-detail/:id',
     component: clubDetail
   },
   {
@@ -84,13 +84,9 @@ export default [
     component: classAll
   },
   {
-    path: '/class-detail/:id',
+    path: '/class-detail',
     component: classDetail
   },
-  // {
-  //   path: '/vip-class-detail/:id',
-  //   component: vipClassDetail
-  // },
   {
     path: '/class-due',
     component: classDue
@@ -104,7 +100,7 @@ export default [
     component: addrDetail
   },
   {
-    path: '/class-schedule',
+    path: '/class-schedule/:id',
     component: classSchedule
   }
 ]
