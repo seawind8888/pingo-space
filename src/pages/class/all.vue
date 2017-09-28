@@ -25,7 +25,7 @@
       ...mapState(['classList', 'classIsReady']),
     },
     created() {
-      this.$store.dispatch('getClassInfo')
+      this.$store.dispatch('getClassInfo', {user: window.localStorage.pk})
     }
   }
 

@@ -84,7 +84,7 @@ export default [
     component: classAll
   },
   {
-    path: '/class-detail',
+    path: '/class-detail/:id',
     component: classDetail
   },
   {

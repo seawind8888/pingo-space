@@ -294,10 +294,10 @@
       },
     },
     mounted() {
-      this.$store.dispatch('getSchoolexInfo')
+      this.$store.dispatch('getSchoolexInfo', {userid: window.localStorage.pk})
       if (localStorage.token) {
         this.$store.dispatch('getUserInfo', localStorage.pk)
-        this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
+        // this.$store.dispatch('getEnrollmentsInfo', localStorage.pk)
       }
     }
   }

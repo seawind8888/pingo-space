@@ -137,7 +137,9 @@
 
 <script>
   export default {
-
+    created() {
+      this.$store.dispatch('getEnrollmentsInfo', this.$route.params.id)
+    }
   }
 
 </script>

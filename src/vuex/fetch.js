@@ -11,7 +11,7 @@ export const fetchLearnex = () => {
 
 
 export const fetchSchoolex = (param) => {
-  return fetch(`${baseURL}/api/schoolex?`)
+  return fetch(`${baseURL}/api/schoolex?${Qs.stringify(param)}`)
     .then((response) => response.json())
 }
 
@@ -20,14 +20,13 @@ export const fetchCellSchoolex = (id) => {
     .then((response) => response.json())
 }
 
-export const fetchClassList = () => {
-  return fetch(`${baseURL}/api/classgroups?user=${window.localStorage.pk}`)
+export const fetchClassList = (param) => {
+  return fetch(`${baseURL}/api/classgroups?${Qs.stringify(param)}`)
     .then((response) => response.json())
 }
 
-export const fetchEnrollmentsInfo = (pk) => {
-  console.log(window.localStorage.token)
-  return fetch(`${baseURL}/api/users/${pk}/enrollments`, {
+export const fetchEnrollmentsInfo = (schoolId) => {
+  return fetch(`${baseURL}/api/enrollments?school=${schoolId}`, {
       headers: {
         'Authorization': `Token ${window.localStorage.token}`
       }
@@ -36,7 +35,7 @@ export const fetchEnrollmentsInfo = (pk) => {
 }
 
 export const fetchUserInfo = (pk) => {
-  return fetch(`${baseURL}/api/users/${pk}/userrests`, {
+  return fetch(`${baseURL}/api/users/${pk}`, {
       headers: {
         'Authorization': `Token ${window.localStorage.token}`
       }

@@ -25,9 +25,9 @@ export function getLearnexInfo({
 export function getSchoolexInfo({
   commit,
   state
-}) {
+}, param) {
   //判断访客模式
-  return fetchSchoolex(state.learn)
+  return fetchSchoolex(param)
     .then((res) => {
       commit('FETCH_SCHOOLEX_FINISH', [res])
     })
@@ -48,9 +48,9 @@ export function getSchoolexCellInfo({
 export function getClassInfo({
   commit,
   state
-}) {
+}, param) {
   state.classIsReady = false
-  return fetchClassList()
+  return fetchClassList(param)
     .then((res) => {
       commit('FETCH_CLASS_LIST', [res])
     })
@@ -59,8 +59,8 @@ export function getClassInfo({
 export function getEnrollmentsInfo({
   commit,
   state
-}, pk) {
-  return fetchEnrollmentsInfo(pk)
+}, schoolId) {
+  return fetchEnrollmentsInfo(schoolId)
     .then((res) => {
       commit('FETCH_ENROLLMENTS_FINISH', [res.data])
     })
@@ -78,9 +78,3 @@ export function getUserInfo({
 }
 
 //异步获取pkid后获取排课
-export async function getHomeInfo({
-  dispatch
-}) {
-  await dispatch('getLearnexInfo')
-  await dispatch('getSchoolexInfo')
-}
