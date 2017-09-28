@@ -3,7 +3,8 @@ import {
   fetchSchoolex,
   fetchCellSchoolex,
   fetchEnrollmentsInfo,
-  fetchUserInfo
+  fetchUserInfo,
+  fetchClassList
 } from './fetch.js'
 
 // 获取俱乐部信息
@@ -44,6 +45,16 @@ export function getSchoolexCellInfo({
     })
 }
 
+export function getClassInfo({
+  commit,
+  state
+}) {
+  state.classIsReady = false
+  return fetchClassList()
+    .then((res) => {
+      commit('FETCH_CLASS_LIST', [res])
+    })
+}
 //获取已选课程信息
 export function getEnrollmentsInfo({
   commit,

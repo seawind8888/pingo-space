@@ -35,6 +35,11 @@ export function FETCH_SCHOOLEX_CELL_FINISH(state, schoolexCell) {
   state.isReady = true
 }
 
+export function FETCH_CLASS_LIST(state, [classList]) {
+  state.classList = classList
+  state.classIsReady = true
+}
+
 
 export function FETCH_ENROLLMENTS_FINISH(state, [enrollments]) {
   state.enrollments = enrollments

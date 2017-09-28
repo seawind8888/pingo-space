@@ -14,6 +14,8 @@ const store = new Vuex.Store({
         schoolex: '',
         schoolexDateBox: [],
         schoolexCell: '',
+        classList: '',
+        classIsReady: false,
         enrollments: '',
         user: '',
         isReady: false,

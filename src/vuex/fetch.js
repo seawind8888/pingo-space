@@ -20,6 +20,11 @@ export const fetchCellSchoolex = (id) => {
     .then((response) => response.json())
 }
 
+export const fetchClassList = () => {
+  return fetch(`${baseURL}/api/classgroups`)
+    .then((response) => response.json())
+}
+
 export const fetchEnrollmentsInfo = (pk) => {
   console.log(window.localStorage.token)
   return fetch(`${baseURL}/api/users/${pk}/enrollments`, {
