@@ -1,5 +1,5 @@
 import App from './App'
-import entry from './pages/entry'
+// import entry from './pages/entry'
 import login from './pages/login'
 import regist from './pages/regist'
 import passForgot from './pages/pass/forgot'
@@ -37,16 +37,16 @@ import addrDetail from'./pages/class/address-detail'
 export default [
   {
     path: '',
-    redirect: '/entry'
+    redirect: '/login'
   },
   {
     path: '/home',
     component: home
   },
-  {
-    path: '/entry',
-    component: entry,
-  },
+  // {
+  //   path: '/entry',
+  //   component: entry,
+  // },
   {
     path: '/login',
     component: login

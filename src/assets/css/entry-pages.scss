@@ -52,6 +52,23 @@
         font-size: 12px;
         margin-top: 0
     }
+    .control-info-container {
+        display: flex;
+        flex-direction: row;
+        padding-top: 8px;
+    }
+    .control-info {
+        font-size: 12px;
+    }
+    .regist-id {
+        justify-content: flex-start
+    }
+    .forget-pass-info {
+        display: flex;
+        flex: 1;
+        
+        justify-content: flex-end
+    }
 }
 
 .enter-container {

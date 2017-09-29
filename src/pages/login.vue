@@ -2,6 +2,11 @@
   <div class="login-container">
     <input id="abc" placeholder="请输入手机号码" v-model="userName" class="input-container">
     <input placeholder="请输入密码" type="password" v-model="passWord" class="input-container">
+    <div class="control-info-container">
+      <router-link to="/pass-forgot" class="control-info regist-id">注册账号</router-link>
+      <router-link to="/pass-forgot" class="control-info forget-pass-info">忘记密码</router-link>
+    </div>
+    
     <div @click="signIn()" class="login-btn">登录</div>
     <div class="login-info">点击开始，即表示已阅读并同意
       <a>《平行国服务协议》</a>
@@ -12,7 +17,8 @@
 <script>
   import Qs from 'qs'
   import {
-    Toast
+    Toast,
+    cookie
   } from 'vux'
   import 'whatwg-fetch'
   export default {
@@ -68,11 +74,14 @@
           .then((res) => {
             self.toastInfo.message = '登录成功'
             self.toastInfo.isShow = true
-            localStorage.token = res.token.key
+            cookie.set('token', res.token.key)
+            cookie.set('time', Date.parse(res.token.expires_at))
+            cookie.set('pk', Date.parse(res.user.pk))
+            // localStorage.token = res.token.key
             // self.$store.state.token = localStorage.token
-            localStorage.time = Date.parse(res.token.expires_at)
-            localStorage.pk = res.user.pk
-            console.log(this.$route.query.source === 'all')
+            // localStorage.time = Date.parse(res.token.expires_at)
+            // localStorage.pk = res.user.pk
+            // console.log(this.$route.query.source === 'all')
             if (this.$route.query.source === 'all') {
               setTimeout(function () {
                 self.$router.push('/class-all')
@@ -90,8 +99,13 @@
           })
       }
     },
-    mounted () {
-      console.log(this.$route.query.source)
+    mounted() {
+      let curTime = Date.parse(new Date())
+      let cookieTime = cookie.get('time', (time) => {
+        if (time && time > curTime) {
+          this.$router.push('/home')
+        }
+      })
     }
   }
 
