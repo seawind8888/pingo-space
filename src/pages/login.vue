@@ -3,10 +3,9 @@
     <input id="abc" placeholder="请输入手机号码" v-model="userName" class="input-container">
     <input placeholder="请输入密码" type="password" v-model="passWord" class="input-container">
     <div class="control-info-container">
-      <router-link to="/pass-forgot" class="control-info regist-id">注册账号</router-link>
+      <router-link to="/regist" class="control-info regist-id">注册账号</router-link>
       <router-link to="/pass-forgot" class="control-info forget-pass-info">忘记密码</router-link>
     </div>
-    
     <div @click="signIn()" class="login-btn">登录</div>
     <div class="login-info">点击开始，即表示已阅读并同意
       <a>《平行国服务协议》</a>
