@@ -145,6 +145,6 @@
 </script>
 
 <style lang="sass" scope>
-  @import '../../assets/css/vip-class-detail.scss'
+  @import '../../assets/css/class-detail.scss'
 
 </style>

@@ -16,6 +16,7 @@ const store = new Vuex.Store({
         schoolexCell: '',
         classList: '',
         classIsReady: false,
+        classBackImgUrl: '',
         enrollments: '',
         user: '',
         isReady: false,

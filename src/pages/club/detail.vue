@@ -249,5 +249,5 @@ export default {
 
 </script>
 <style lang="scss">
-@import '../../assets/css/class-detail.scss';
+@import '../../assets/css/club-detail.scss';
 </style>

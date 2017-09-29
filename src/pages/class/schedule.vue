@@ -1,6 +1,7 @@
 <template>
   <div class="index-container">
     <header class="index-header">
+      <div></div>
       <img style="position:relative" src="../../assets/imgs/App/class-back-img.png">
     </header>
     <section class="choose-class-container">

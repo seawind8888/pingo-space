@@ -2,7 +2,7 @@
   <div class="class-item-container">
     <div class="item-container">
       <div class="item-left">
-        <img :src="itemCover">
+        <img :src="itemCover?itemCover:'https://i.loli.net/2017/09/29/59cdf20da6647.png'">
       </div>
       <div class="item-middle">
         <div class="item-title-container">{{itemTitle}}</div>
