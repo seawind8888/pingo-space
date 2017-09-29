@@ -73,6 +73,13 @@
             // self.$store.state.token = localStorage.token
             localStorage.time = Date.parse(res.token.expires_at)
             localStorage.pk = res.user.pk
+            console.log(this.$route.query.source === 'all')
+            if (this.$route.query.source === 'all') {
+              setTimeout(function () {
+                self.$router.push('/class-all')
+              }, 1200);
+              return
+            }
             setTimeout(function () {
               self.$router.push('/home')
             }, 1200);
@@ -83,6 +90,9 @@
               self.toastInfo.isShow = true
           })
       }
+    },
+    mounted () {
+      console.log(this.$route.query.source)
     }
   }
 

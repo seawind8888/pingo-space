@@ -5,7 +5,7 @@
       <img src="../assets/imgs/quick-start.png">
     </div>
     <div class="btn-container">
-      <router-link class="enter-btn" to='/login'>
+      <router-link class="enter-btn" :to='"/login"'>
         登录
       </router-link>
       <router-link class="enter-btn right-btn" to='/regist'>
@@ -22,9 +22,9 @@ export default {
 
   },
   created() {
-    let curTime = new Date()
+    let curTime = Date.parse(new Date())
     if (localStorage.time && localStorage.time > curTime) {
-      this.$router.push('./home')
+      this.$router.push('/home')
       // this.$store.state.token = localStorage.token
     }
   }

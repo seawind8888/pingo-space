@@ -25,7 +25,14 @@
       ...mapState(['classList', 'classIsReady']),
     },
     created() {
-      this.$store.dispatch('getClassInfo', {user: window.localStorage.pk})
+      let curTime = Date.parse(new Date())
+      if (!localStorage.time || localStorage.time < curTime) {
+         this.$router.push('/login?source=all')
+         return
+      }
+      this.$store.dispatch('getClassInfo', {
+        user: window.localStorage.pk
+      })
     }
   }
 
