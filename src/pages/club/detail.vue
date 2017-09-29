@@ -1,7 +1,8 @@
 <template>
   <div v-if="isReady" class="detail-container">
     <header>
-      <img :src="schoolexCell.cover" />
+      <img v-if="schoolexCell.cover" :src="schoolexCell.cover" />
+      <img v-else src="../../assets/imgs/placeholder-Introduce.png">
       <div class="detail-header-container">
         <h1 class="class-title">{{schoolexCell.detail}}</h1>
         <p class="class-price">会员：消费{{schoolexCell.timecost}}次次数/非会员：{{schoolexCell.price}}元/次</p>
