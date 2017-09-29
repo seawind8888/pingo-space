@@ -13,139 +13,160 @@
       <a>《平行国服务协议》</a>
     </div>
     <toast v-model="toastInfo.isShow" type="text" :time="1000" is-show-mask :text="toastInfo.message"></toast>
-    <toast v-model="toastInfo.success"  :time="1000" is-show-mask :text="'注册成功'"></toast>
+    <toast v-model="toastInfo.success" :time="1000" is-show-mask :text="'注册成功'"></toast>
   </div>
 </template>
 <script>
-import { Toast } from 'vux'
-import axios from 'axios'
-
-export default {
-  data() {
-    return {
-      userName: '',
-      passWord: '',
-      verifyPassWord: '',
-      verifyCode: {
-        code: '',
-        getting: false,
-        count: 60
-      },
-      toastInfo: {
-        message: '',
-        isShow: false,
-        success: false
-      }
-    }
-  },
-  components: {
+  import {
     Toast
-  },
-  methods: {
-    getVerifyCode() {
-      //倒计时
-      var self = this
-      self.verifyCode.getting = true
-      setInterval(() => {
-        if (self.verifyCode.count < 2) {
-          self.verifyCode.getting = false
-          this.verifyCode.count = 60
+  } from 'vux'
+import 'whatwg-fetch'
+  export default {
+    data() {
+      return {
+        userName: '',
+        passWord: '',
+        verifyPassWord: '',
+        verifyCode: {
+          code: '',
+          getting: false,
+          count: 60
+        },
+        toastInfo: {
+          message: '',
+          isShow: false,
+          success: false
+        }
+      }
+    },
+    components: {
+      Toast
+    },
+    methods: {
+      getVerifyCode() {
+        //倒计时
+        var dataInfo,self = this
+        self.verifyCode.getting = true
+        setInterval(() => {
+          if (self.verifyCode.count < 2) {
+            self.verifyCode.getting = false
+            this.verifyCode.count = 60
+            return
+          }
+          this.verifyCode.count--
+        }, 1000)
+        //开始发验证码
+        dataInfo.append('mobile', self.userName)
+        dataInfo.append('scene', 0)
+return fetch('http://staging.pingospace.com/api/account/register', {
+            method: 'post',
+            body: dataInfo
+          })
+          .then((response) => response.json())
+          
+        // axios({
+        //     method: 'post',
+        //     url: '/api/account/register',
+        //     // url: `${baseURL}/api/auth/login`,
+        //     headers: {
+        //       "Accept": "application/json",
+        //       "Accept-Language": "zh-hans"
+        //     },
+        //     validateStatus: (status) => {
+        //       console.log(status)
+        //       return status >= 200 && status <= 400; //默认
+        //     },
+        //     data: {
+        //       mobile: self.userName,
+        //       scene: 0,
+        //     }
+        //   })
+          .then((res) => {
+            self.toastInfo.success = true
+
+            // if (res.status == 200) {
+            //   // self.toastInfo.message = '注册成功'
+            //   self.toastInfo.success = true
+            // } else {
+            //   self.toastInfo.message = res.data.message
+            //   self.toastInfo.isShow = true
+            // }
+          })
+          .catch((err) => {
+            console.log(err)
+            // return err
+          })
+      },
+      signUp() {
+        var dataInfo, self = this
+        if (!self.userName) {
+          self.toastInfo.message = '请输入正确用户名'
+          self.toastInfo.isShow = true
+          return
+        } else if (!self.verifyCode.code) {
+          self.toastInfo.message = '请输入正确验证码'
+          self.toastInfo.isShow = true
+          return
+        } else if (!self.passWord) {
+          self.toastInfo.message = '请输入正确密码'
+          self.toastInfo.isShow = true
+          return
+        } else if (self.passWord !== self.verifyPassWord) {
+          self.toastInfo.message = '两次密码输入不正确'
+          self.toastInfo.isShow = true
           return
         }
-        this.verifyCode.count--
-      }, 1000)
-      //开始发验证码
-      axios({
-        method: 'post',
-        url: '/api/account/register',
-        // url: `${baseURL}/api/auth/login`,
-        headers: {
-          "Accept": "application/json",
-          "Accept-Language": "zh-hans"
-        },
-        validateStatus: (status) => {
-          console.log(status)
-          return status >= 200 && status <= 400;//默认
-        },
-        data: {
-          mobile: self.userName,
-          scene: 0,
-        }
-      })
-        .then((res) => {
-          console.log(res)
-                      self.toastInfo.success = true
-
-          // if (res.status == 200) {
-          //   // self.toastInfo.message = '注册成功'
-          //   self.toastInfo.success = true
-          // } else {
-          //   self.toastInfo.message = res.data.message
-          //   self.toastInfo.isShow = true
-          // }
-        })
-        .catch((err) => {
-          console.log(err)
-          // return err
-        })
-    },
-    signUp() {
-      var self = this
-      if (!self.userName) {
-        self.toastInfo.message = '请输入正确用户名'
-        self.toastInfo.isShow = true
-        return
-      } else if (!self.verifyCode.code) {
-        self.toastInfo.message = '请输入正确验证码'
-        self.toastInfo.isShow = true
-        return
-      } else if (!self.passWord) {
-        self.toastInfo.message = '请输入正确密码'
-        self.toastInfo.isShow = true
-        return
-      } else if (self.passWord !== self.verifyPassWord) {
-        self.toastInfo.message = '两次密码输入不正确'
-        self.toastInfo.isShow = true
-        return
-      }
-      // let baseURL = process.env === 'production' ? 'http://staging.pingospace.com' : ''
-      axios({
-        method: 'post',
-        url: '/api/account/register',
-        // url: `${baseURL}/api/auth/login`,
-        headers: {
-          "Accept": "application/json",
-          "Accept-Language": "zh-hans"
-        },
-        data: {
-          mobile: self.userName,
-          password: self.passWord,
-          code: self.verifyCode.code,
-          is_client: 1,
-          is_instructor: 0
-        }
-      })
-        .then((res) => {
-          console.log(res)
-          self.toastInfo.message = '注册成功'
-          self.toastInfo.isShow = true
-          setTimeout(function () {
-            self.$router.push('/home')
-          }, 1200);
-        })
-        .catch((err) => {
-          console.log(err)
-          self.toastInfo.message = '登录失败',
+        // let baseURL = process.env === 'production' ? 'http://staging.pingospace.com' : ''
+        dataInfo = new FormData()
+        dataInfo.append('mobile', self.userName)
+        dataInfo.append('password', self.passWord)
+        dataInfo.append('code', self.verifyCode.code)
+        dataInfo.append('is_client', 1)
+        dataInfo.append('is_instructor', 0)
+        return fetch('http://staging.pingospace.com/api/account/register', {
+            method: 'post',
+            body: dataInfo
+          })
+          .then((response) => response.json())
+          // axios({
+          //   method: 'post',
+          //   url: '/api/account/register',
+          //   // url: `${baseURL}/api/auth/login`,
+          //   headers: {
+          //     "Accept": "application/json",
+          //     "Accept-Language": "zh-hans"
+          //   },
+          //   data: {
+          //     mobile: self.userName,
+          //     password: self.passWord,
+          //     code: self.verifyCode.code,
+          //     is_client: 1,
+          //     is_instructor: 0
+          //   }
+          // })
+          .then((res) => {
+            console.log(res)
+            self.toastInfo.message = '注册成功'
             self.toastInfo.isShow = true
+            setTimeout(function () {
+              self.$router.push('/home')
+            }, 1200);
+          })
+          .catch((err) => {
+            console.log(err)
+            self.toastInfo.message = '登录失败',
+              self.toastInfo.isShow = true
 
-        })
+          })
+      }
+    },
+    created() {
+
     }
-  },
-  created() {
-
   }
-}
+
 </script>
 <style lang="scss">
-@import '../assets/css/entry-pages.scss';
+  @import '../assets/css/entry-pages.scss';
+
 </style>

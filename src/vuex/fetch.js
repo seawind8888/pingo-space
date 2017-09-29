@@ -1,4 +1,3 @@
-import axios from 'axios'
 import Qs from 'qs'
 import 'whatwg-fetch'
 // const baseURL = process.env.NODE_ENV === 'production' ? 'http://staging.pingospace.com' : ''
