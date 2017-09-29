@@ -40,6 +40,19 @@ export function FETCH_CLASS_LIST(state, [classList]) {
   state.classIsReady = true
 }
 
+export function FETCH_RECOMMENDATIONS_LIST(state, [recommendationsList]) {
+  recommendationsList.forEach((item) => {
+    let imgInfo = {
+      img: item.image,
+      url: item.activity
+    }
+    state.recommendations.push(imgInfo)
+  })
+}
+
+export function FETCH_LEARNTYPE_LIST(state, [learntype]) {
+  state.learnType = learntype
+}
 
 export function FETCH_ENROLLMENTS_FINISH(state, [enrollments]) {
   state.enrollments = enrollments

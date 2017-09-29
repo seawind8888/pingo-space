@@ -1,6 +1,6 @@
 <template>
   <div v-if="classIsReady">
-    <ul class="class-item-container">
+    <ul v-if="classList.length>0" class="class-item-container">
       <li :key="index" v-for="(item,index) in classList" class="class-item">
         <router-link :to="'/class-schedule/' + item.pk">
           <img :src="item.cover">
@@ -13,6 +13,11 @@
         </router-link>
       </li>
     </ul>
+    <div v-else class="no-class-block">
+      <img src="../../assets/imgs/schedule-block.png">
+      <div class="block-info">购买课程后，请耐心等待</div>
+      <div class="block-info">分班后，再开始上课</div>
+    </div>
   </div>
 </template>
 
@@ -27,8 +32,8 @@
     created() {
       let curTime = Date.parse(new Date())
       if (!localStorage.time || localStorage.time < curTime) {
-         this.$router.push('/login?source=all')
-         return
+        this.$router.push('/login?source=all')
+        return
       }
       this.$store.dispatch('getClassInfo', {
         user: window.localStorage.pk
@@ -39,6 +44,7 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '../../assets/css/reset.scss';
   @import '../../assets/css/class-all.scss';
 
 </style>

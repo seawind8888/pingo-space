@@ -17,6 +17,8 @@ const store = new Vuex.Store({
         classList: '',
         classIsReady: false,
         classBackImgUrl: '',
+        recommendations: [],
+        learnType: '',
         enrollments: '',
         user: '',
         isReady: false,

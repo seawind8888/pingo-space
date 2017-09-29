@@ -24,6 +24,16 @@ export const fetchClassList = (param) => {
   return fetch(`${baseURL}/api/classgroups?${Qs.stringify(param)}`)
     .then((response) => response.json())
 }
+export const fetchRecommendations = () => {
+  return fetch(`${baseURL}/api/recommendations`)
+    .then((response) => response.json())
+}
+
+
+export const fetchLearnType = () => {
+  return fetch(`${baseURL}/api/learntype`)
+    .then((response) => response.json())
+}
 
 export const fetchEnrollmentsInfo = (schoolId) => {
   return fetch(`${baseURL}/api/enrollments?school=${schoolId}`, {

@@ -18,8 +18,8 @@
         </ul>
       </div>
       <div v-if="schoolex.length === 0" class="no-class-block">
-        <img src="../../assets/imgs/App/class-block.png">
-        <div class="block-info">小编正在努力排课中...</div>
+        <img src="../../assets/imgs/schedule-block.png">
+        <div class="block-info">请耐心等待排课，排好课后，可在这里查看课程表的安排哦。</div>
       </div>
     </section>
   </div>
@@ -64,6 +64,7 @@
 </script>
 
 <style lang="scss" scope>
+  @import '../../assets/css/reset.scss';
   @import '../../assets/css/clubIndex.scss';
 
 </style>
