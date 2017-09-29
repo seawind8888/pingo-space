@@ -248,7 +248,16 @@ p {
     white-space: nowrap;
   }
 }
-
+.loading-block-container {
+  width: 100%;
+  padding-top:10px;
+  display: flex;
+  justify-content: center;
+  .loading-block {
+    width: 100px;
+    height: 100px;
+  }
+}
 // .class-section-info-container {
 //   display: flex;
 //   flex-direction: row;
