@@ -20,7 +20,7 @@
   import {
     Toast
   } from 'vux'
-import 'whatwg-fetch'
+  import 'whatwg-fetch'
   export default {
     data() {
       return {
@@ -45,7 +45,8 @@ import 'whatwg-fetch'
     methods: {
       getVerifyCode() {
         //倒计时
-        var dataInfo,self = this
+        var self = this
+        var dataInfo = new FormData()
         self.verifyCode.getting = true
         setInterval(() => {
           if (self.verifyCode.count < 2) {
@@ -58,47 +59,35 @@ import 'whatwg-fetch'
         //开始发验证码
         dataInfo.append('mobile', self.userName)
         dataInfo.append('scene', 0)
-return fetch('http://staging.pingospace.com/api/account/register', {
+        return fetch('http://staging.pingospace.com/api/verification/code', {
             method: 'post',
             body: dataInfo
           })
           .then((response) => response.json())
-          
-        // axios({
-        //     method: 'post',
-        //     url: '/api/account/register',
-        //     // url: `${baseURL}/api/auth/login`,
-        //     headers: {
-        //       "Accept": "application/json",
-        //       "Accept-Language": "zh-hans"
-        //     },
-        //     validateStatus: (status) => {
-        //       console.log(status)
-        //       return status >= 200 && status <= 400; //默认
-        //     },
-        //     data: {
-        //       mobile: self.userName,
-        //       scene: 0,
-        //     }
-        //   })
           .then((res) => {
-            self.toastInfo.success = true
-
-            // if (res.status == 200) {
-            //   // self.toastInfo.message = '注册成功'
-            //   self.toastInfo.success = true
-            // } else {
-            //   self.toastInfo.message = res.data.message
-            //   self.toastInfo.isShow = true
-            // }
+            self.toastInfo.isShow = true
+            self.toastInfo.message = res.message
           })
-          .catch((err) => {
-            console.log(err)
-            // return err
-          })
+        //   if (response.ok) {
+        //     .then((res) => {
+        //       console.log(res)
+        //       self.toastInfo.isShow = true
+        //       self.toastInfo.message = '验证码已发送'
+        //     })
+        //   } else {
+        //     response.json().then((res) => console.log(res))
+        //     // self.toastInfo.isShow = true
+        //     // self.toastInfo.message = response.message
+        //   }
+        // })
+        // .catch((err) => {
+        //   console.log(err)
+        //   // return err
+        // })
       },
       signUp() {
-        var dataInfo, self = this
+        var self = this
+        var dataInfo = new FormData()
         if (!self.userName) {
           self.toastInfo.message = '请输入正确用户名'
           self.toastInfo.isShow = true
@@ -145,17 +134,22 @@ return fetch('http://staging.pingospace.com/api/account/register', {
           //   }
           // })
           .then((res) => {
-            console.log(res)
-            self.toastInfo.message = '注册成功'
+            // console.log(res)
+            self.toastInfo.message = res.message
             self.toastInfo.isShow = true
+            if(res.title === '验证失败') {
+              return
+            }
+            // self.toastInfo.message = '注册成功'
+            // self.toastInfo.isShow = true
             setTimeout(function () {
               self.$router.push('/home')
             }, 1200);
           })
           .catch((err) => {
             console.log(err)
-            self.toastInfo.message = '登录失败',
-              self.toastInfo.isShow = true
+            // self.toastInfo.message = '登录失败',
+            //   self.toastInfo.isShow = true
 
           })
       }
